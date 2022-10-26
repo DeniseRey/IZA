@@ -7,7 +7,7 @@ export class Inter extends Phaser.Scene {
 
   constructor() {
 
-    super("Inter");
+    super("Inter1");
   }
 
   init (data) {
