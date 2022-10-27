@@ -9,6 +9,7 @@ import { Inter } from "../src/scenes/Inter.js";
 
 
 import HelloWorldScene from './scenes/HelloWorldScene'
+import { Juego } from './scenes/Juego';
 
 const config = {
 	type: Phaser.AUTO,
@@ -33,7 +34,7 @@ const config = {
       debug: false,
     },
   },
-	scene: [ Preloads, Black, MainMenu, Tuto, Creditos, Inter]
+	scene: [ Preloads, Black, MainMenu, Tuto, Creditos, Inter, Juego]
 }
 
 export default new Phaser.Game(config)
