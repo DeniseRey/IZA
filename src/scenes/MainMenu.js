@@ -11,7 +11,7 @@ create(){
   
   console.log(escena); 
   
-  this.music1 = this.sound.add("musica3");
+  this.music1 = this.sound.add("mainmusic");
     var musicConfig = {
       mute: false,
       volume: 0.2,
@@ -28,7 +28,7 @@ create(){
     const boton3 = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY + this.cameras.main.centerY/12, 'playbutton').setInteractive({cursor: "pointer"})
     boton3.on('pointerover', function(){boton3.setTexture('playbutton1')})
     boton3.on('pointerout', function(){boton3.setTexture('playbutton')})
-    boton3.on('pointerdown', () => {this.scene.start("Inter1"); this.game.sound.stopAll();} )  
+    boton3.on('pointerdown', () => {this.scene.start("Inter1", {nivel:1, score:0}); this.game.sound.stopAll(); escena = 0 } )  
    
     const boton1 = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY + this.cameras.main.centerY/3, 'guiabutton').setInteractive({cursor: "pointer"})
     boton1.on('pointerover', function(){boton1.setTexture('guiabutton1')})

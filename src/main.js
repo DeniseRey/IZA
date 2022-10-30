@@ -6,7 +6,8 @@ import { MainMenu } from "../src/scenes/MainMenu.js";
 import { Tuto } from "../src/scenes/Tutorial.js";
 import { Creditos } from "../src/scenes/Creditos.js";
 import { Inter } from "../src/scenes/Inter.js";
-
+import { Lost } from './scenes/lost';
+import { Win } from './scenes/win';
 
 import HelloWorldScene from './scenes/HelloWorldScene'
 import { Juego } from './scenes/Juego';
@@ -34,7 +35,7 @@ const config = {
       debug: false,
     },
   },
-	scene: [ Preloads, Black, MainMenu, Tuto, Creditos, Inter, Juego]
+	scene: [ Preloads, Black, MainMenu, Tuto, Creditos, Inter, Juego, Lost, Win]
 }
 
 export default new Phaser.Game(config)

@@ -53,25 +53,26 @@ export class Preloads extends Phaser.Scene {
         frameWidth: 86,
         frameHeight: 65,
       });
-      this.load.tilemapTiledJSON("map", "assets/tilemaps/mapaideaiza.json");
-      this.load.image("tilesBelow", "assets/tilemaps/fondo1.png");
-      this.load.image("tilesPlatform", "assets/tilemaps/plataformas.png");
+      this.load.tilemapTiledJSON("map1", "assets/tilemaps/mapaideaiza.json");
+      this.load.image("tilesBelow1", "assets/tilemaps/fondo1.png");
+      this.load.image("tilesPlatform1", "assets/tilemaps/plataforma1.png");
       this.load.tilemapTiledJSON("map2", "assets/tilemaps/mapaideaiza2.json");
       this.load.image("tilesBelow2", "assets/tilemaps/fondo2.png");
-      this.load.image("tilesPlatform2", "assets/tilemaps/plataformas1.png");
+      this.load.image("tilesPlatform2", "assets/tilemaps/plataforma2.png");
       this.load.tilemapTiledJSON("map3", "assets/tilemaps/mapaideaiza3.json");
       this.load.image("tilesBelow3", "assets/tilemaps/fondo3.png");
-      this.load.image("tilesPlatform3", "assets/tilemaps/plataforma6.png");
+      this.load.image("tilesPlatform3", "assets/tilemaps/plataforma3.png");
       this.load.image("tutorial", "assets/imagenes/EjTuto.png");
       this.load.audio("gota", "assets/sounds/gota.mp3");
       this.load.audio("hit", "assets/sounds/hit.mp3");
       this.load.audio("musica1", "assets/sounds/musicalvl1.mp3");
-      this.load.audio("musica2", "assets/sounds/musicalvl2.mp3");
-      this.load.audio("musica3", "assets/sounds/mainmenumusic.mp3");
-      this.load.audio("musica4", "assets/sounds/musicalvl3.mp3");
+      this.load.audio("musica3", "assets/sounds/musicalvl2.mp3");
+      this.load.audio("mainmusic", "assets/sounds/mainmenumusic.mp3");
+      this.load.audio("musica2", "assets/sounds/musicalvl3.mp3");
       this.load.audio("victory", "assets/sounds/victoriasound.mp3");
       this.load.audio("fail", "assets/sounds/fail.mp3");
       this.load.audio("lose", "assets/sounds/lose.mp3");
+      this.load.image("invisible", "assets/tilemaps/invisible.png");
     }
   
     create() {
