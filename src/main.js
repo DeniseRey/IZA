@@ -8,8 +8,6 @@ import { Creditos } from "../src/scenes/Creditos.js";
 import { Inter } from "../src/scenes/Inter.js";
 import { Lost } from './scenes/lost';
 import { Win } from './scenes/win';
-
-import HelloWorldScene from './scenes/HelloWorldScene'
 import { Juego } from './scenes/Juego';
 
 const config = {
@@ -20,13 +18,13 @@ const config = {
     mode: Phaser.Scale.FIT,
     autoCenter: Phaser.Scale.CENTER_BOTH,
     min: {
-      width: 800,
-      height: 600,
+      width: 740,
+      height: 640,
     },
     max: {
-      width: 1250,
-      height: 1200,
-    },
+      width: 1040,
+      height: 940,
+    }
   },
   physics: {
     default: "arcade",

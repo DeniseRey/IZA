@@ -6,7 +6,7 @@ export class Interfaz {
     constructor(scene, score){
         this.scene=scene;
         this.score = score;
-        this.vida = 3;
+        this.vida = 99;
         this.scoreText = this.scene.scene.add.text(58, 52, `Miel: ${
             this.score}`, {fontFamily: "arial",fontSize: "17px",
           });

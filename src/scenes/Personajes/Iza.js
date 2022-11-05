@@ -6,13 +6,13 @@ export default class Iza extends  Phaser.Physics.Arcade.Sprite
 {
 	constructor(vida, scene, x, y, velocidadY)
 	{ 
-		super(scene, x, y, 'cayendo', 0)
+		super(scene, x, y, 'cayendo1', 0)
 		scene.add.existing(this);
 		scene.physics.add.existing(this);
 		this.vida=vida;
 		this.scene=scene
 		this.setVelocityY(VelozY[velocidadY])
-		this.anims.play("caer")
+		this.anims.play("caer1")
 
 		
 	}

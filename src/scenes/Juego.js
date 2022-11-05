@@ -103,13 +103,13 @@ update(){
   }
   if (cursors.left.isDown) {
     this.iza.setVelocityX(-160);
-    this.iza.anims.play("left", true);
+    this.iza.anims.play("left1", true);
   } else if (cursors.right.isDown) {
     this.iza.setVelocityX(160);
 
-    this.iza.anims.play("right", true);
+    this.iza.anims.play("right1", true);
   } else {
-    this.iza.anims.play("caer", true);
+    this.iza.anims.play("spin", true);
     this.iza.setVelocityX(0);
 
   }
@@ -145,7 +145,7 @@ update(){
   meta(iza,suelo) { 
       Fin = true;
       this.iza.setVelocityX(0);
-      this.iza.anims.play ("quieto", true);
+      this.iza.anims.play ("quieto1", true);
     if (iza.body.blocked.down) {
     this.time.delayedCall(1800, () => {
       this.game.sound.stopAll();

@@ -8,7 +8,7 @@ export default class Enemigos extends Phaser.GameObjects.Sprite
 		scene.add.existing(this);
 		scene.physics.add.existing(this);
 		this.scene=scene
-		this.anims.play("mala")
+		this.anims.play("mala1")
 
         
 	}
