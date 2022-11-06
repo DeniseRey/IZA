@@ -48,15 +48,27 @@ export class Preloads extends Phaser.Scene {
       this.load.image("tutorial", "assets/imagenes/EjTuto.png");
       this.load.image("invisible", "assets/tilemaps/invisible.png");
       this.load.image("primero", "assets/imagenes/izaquietoprimero.png");
+      this.load.image("tutoalas1", "assets/imagenes/tutoalasescudo.png");
+      this.load.image("tutoalas2", "assets/imagenes/tutoalasataque.png");
+      this.load.image("ndeah", "assets/imagenes/bruh.png");
 
       
       this.load.audio("gota", "assets/sounds/gota.mp3");
       this.load.audio("hit", "assets/sounds/hit.mp3");
-      this.load.audio("musica1", "assets/sounds/musicalvl1.mp3");
-      this.load.audio("musica3", "assets/sounds/musicalvl2.mp3");
+      this.load.audio("musica1", "assets/sounds/musicalvl1.mp3");      
+      this.load.audio("musica2", "assets/sounds/musicalvl2.mp3");
+      this.load.audio("musica3", "assets/sounds/musicalvl3.mp3");
+      this.load.audio("musica4", "assets/sounds/musicalvl4.mp3");
+      this.load.audio("musica5", "assets/sounds/musicalvl5.mp3");
+      this.load.audio("musica6", "assets/sounds/musicalvl6.mp3");
+      this.load.audio("musica7", "assets/sounds/musicalvl7.mp3");
+      this.load.audio("musica8", "assets/sounds/musicalvl8.mp3");
+      this.load.audio("musica9", "assets/sounds/musicalvl9.mp3");
       this.load.audio("mainmusic", "assets/sounds/mainmenumusic.mp3");
-      this.load.audio("musica2", "assets/sounds/musicalvl3.mp3");
       this.load.audio("victory", "assets/sounds/victoriasound.mp3");
+      this.load.audio("soundescudo", "assets/sounds/sonidoescudo.mp3");
+      this.load.audio("soundpoof", "assets/sounds/sonidopoof.mp3");
+      this.load.audio("soundspin", "assets/sounds/sonidospin.mp3");
       this.load.audio("fail", "assets/sounds/fail.mp3");
       this.load.audio("lose", "assets/sounds/lose.mp3");
       
@@ -117,7 +129,7 @@ export class Preloads extends Phaser.Scene {
       this.load.tilemapTiledJSON("map6", "assets/tilemaps/mapaideaiza6.json");
       this.load.image("tilesBelow6", "assets/tilemaps/fondo6.png");
       this.load.image("tilesPlatform6", "assets/tilemaps/plataforma6.png");
-      this.load.tilemapTiledJSON("map7", "assets/tilemaps/mapaideaiza7.json");
+      this.load.tilemapTiledJSON("map7", "assets/tilemaps/mapaideaiza7.JSON");
       this.load.image("tilesBelow7", "assets/tilemaps/fondo7.png");
       this.load.image("tilesPlatform7", "assets/tilemaps/plataforma7.png");
       this.load.tilemapTiledJSON("map8", "assets/tilemaps/mapaideaiza8.json");
@@ -242,8 +254,8 @@ export class Preloads extends Phaser.Scene {
       this.anims.create({
         key: "spin",
         frames: this.anims.generateFrameNumbers("tornado", { start: 0, end: 26 }),
-        frameRate: 12,
-        repeat: -1,
+        frameRate: 14,
+        
       });
       this.anims.create({
         key: "pof",
