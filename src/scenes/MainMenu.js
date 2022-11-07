@@ -2,22 +2,18 @@ import Button from "../scenes/Botones/button.js";
 import Phaser from 'phaser'
 import WebFontFile from './WebFontFile'
 
-class TextStyleScene extends Phaser.Scene
-{
-	preload()
-	{
-		const fonts = new WebFontFile(this.load, 'Lilita One')
-		this.load.addFile(fonts)
-	}}
-
-var WebFont = require('webfontloader');
-
 var escena = 0;
  export class MainMenu extends Phaser.Scene {
   constructor() {
 
     super("MainMenu");
   }
+
+  preload()
+	{
+		const fonts = new WebFontFile(this.load, 'Lilita One')
+		this.load.addFile(fonts)
+	}
 
 create(){ 
   
@@ -40,41 +36,41 @@ create(){
     
       const x = this.scale.width * 0.5
       const y = this.scale.height * 0.5
-  
-      this.add.text(x, y, 'JUGAR', {
-        fontFamily: 'Lilita One',
-        fontSize: '48px',
-        color: '#FFE648',
-        stroke: '#9C3B17',
-        strokeThickness: 11,
-        shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
-        padding: { left: null },
-        resolution: 2
-      })
-    
+ 
 
   
 
-    const boton3 = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY + this.cameras.main.centerY/12, 'playbutton').setInteractive({cursor: "pointer"})
-    boton3.on('pointerover', function(){boton3.setTexture('playbutton1')})
-    boton3.on('pointerout', function(){boton3.setTexture('playbutton')})
+    const boton3 = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY + this.cameras.main.centerY/12, 'botonnuevo').setInteractive({cursor: "pointer"})
+    boton3.on('pointerover', function(){boton3.setTexture('botonnuevo2')})
+    boton3.on('pointerout', function(){boton3.setTexture('botonnuevo')})
     boton3.on('pointerdown', () => {this.scene.start("Inter1", {nivel:4, score:0}); this.game.sound.stopAll(); escena = 0 } )  
-   
-    const boton1 = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY + this.cameras.main.centerY/3, 'guiabutton').setInteractive({cursor: "pointer"})
-    boton1.on('pointerover', function(){boton1.setTexture('guiabutton1')})
-    boton1.on('pointerout', function(){boton1.setTexture('guiabutton')})
+    
+      
+    
+    const boton1 = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY + this.cameras.main.centerY/3, 'botonnuevo').setInteractive({cursor: "pointer"})
+    boton1.on('pointerover', function(){boton1.setTexture('botonnuevo2')})
+    boton1.on('pointerout', function(){boton1.setTexture('botonnuevo')})
     boton1.on('pointerdown', () => {
       escena = 1 ; 
       this.scene.start("Tuto")})
   
-    const boton2 = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY + this.cameras.main.centerY/1.7, 'creditosbutton').setInteractive({cursor: "pointer"})
-    boton2.on('pointerover', function(){boton2.setTexture('creditosbutton1')})
-    boton2.on('pointerout', function(){boton2.setTexture('creditosbutton')})
+    const boton2 = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY + this.cameras.main.centerY/1.7, 'botonnuevo').setInteractive({cursor: "pointer"})
+    boton2.on('pointerover', function(){boton2.setTexture('botonnuevo2')})
+    boton2.on('pointerout', function(){boton2.setTexture('botonnuevo')})
     boton2.on('pointerdown', () => {
       escena = 1 ; 
       console.log(escena); 
       this.scene.start("Creditos")})
 
+        this.add.text(200, 250, 'JUGAR', {
+        fontFamily: 'Lilita One',
+        fontSize: '30px',
+        color: '#FFE648',
+        stroke: '#9C3B17',
+        strokeThickness: 9,
+        shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
+        resolution: 2
+      })
     if(
       escena === 0 
       
