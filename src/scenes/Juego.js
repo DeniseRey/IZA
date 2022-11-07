@@ -23,6 +23,9 @@ export class Juego extends Phaser.Scene {
   Recolectables=[]; 
   UI;
   Mundo;
+  Soloizquierda = true;
+  Soloderecha = true;
+  
   constructor() {
 
     super("Juego");
@@ -149,7 +152,7 @@ update(time,delta){
       this.iza.anims.play("spin", true)
       this.iza.setSize(66,95)
      }
-     if(this.iza.anims.currentFrame.index == 26 ){
+     if(this.iza.anims.currentFrame.index == 26 && activado ){
        activado = false
        this.iza.anims.play("caer" + this.Mundo, true);
        this.iza.setSize(86,65)
@@ -158,19 +161,23 @@ update(time,delta){
 
   
   
-  if (cursors.left.isDown && izquierda) {
+  if (cursors.left.isDown && izquierda && this.Soloizquierda) {
     if(!activado){
       this.iza.anims.play("left" + this.Mundo, true);
     }
     this.iza.setVelocityX(-160);
     derecha = true;
+    this.Soloderecha = false;
 
-  } else if (cursors.right.isDown && derecha) {
+  } else if (cursors.right.isDown && derecha && this.Soloderecha) {
     this.iza.setVelocityX(160);
     izquierda = true;
+    this.Soloizquierda = false;
     if(!activado){
     this.iza.anims.play("right" + this.Mundo, true);}
   } else {
+    this.Soloderecha = true;
+    this.Soloizquierda = true;
     if(!activado){
     this.iza.anims.play("caer" + this.Mundo, true);}
     this.iza.setVelocityX(0);
@@ -182,12 +189,17 @@ update(time,delta){
 
 }
   collectMiel(player,miel){
-    this.UI.collectStar()
+    this.UI.collectStar(0)
     miel.destroy();
   }
   hitiza(player,enemigo){
     if (activado){
+      this.poofavispa = this.add.sprite(enemigo.body.position.x, enemigo.body.position.y,"mala2").setOrigin(0)
+      this.poofavispa.anims.play("pof", true)
+      this.sonidogota = this.scene.scene.sound.add("soundpoof");
+      this.sonidogota.play()
       enemigo.destroy();
+      this.UI.collectStar(800)
       return
     }
     this.UI.hitAvispa()

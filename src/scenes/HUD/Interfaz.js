@@ -16,10 +16,14 @@ export class Interfaz {
           });
           this.vidaText.scrollFactorX=0
           this.vidaText.scrollFactorY=0
+          this.sonidogota = this.scene.scene.sound.add("gota");
     }
 
-    collectStar() {
-        //gota.play()
+    collectStar(tiempo) {
+        setTimeout(() => {
+            this.sonidogota.play()
+            }, tiempo);
+        
         this.score += 10;
         this.scoreText.setText(`Miel: ${this.score}`)
     }

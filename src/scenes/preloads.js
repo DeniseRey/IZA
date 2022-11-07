@@ -37,6 +37,12 @@ export class Preloads extends Phaser.Scene {
       this.load.image("inter1","assets/imagenes/inter1.png");
       this.load.image("inter2","assets/imagenes/inter2.png");
       this.load.image("inter3","assets/imagenes/inter3.png");
+      this.load.image("inter4","assets/imagenes/inter4.png");
+      this.load.image("inter5","assets/imagenes/inter5.png");
+      this.load.image("inter6","assets/imagenes/inter6.png");
+      this.load.image("inter7","assets/imagenes/inter7.png");
+      this.load.image("inter8","assets/imagenes/inter8.png");
+      this.load.image("inter9","assets/imagenes/inter9.png");
       this.load.image("click","assets/imagenes/click.png");
       this.load.image("atrasbutton1","assets/imagenes/atras2.png");
       this.load.image("avispasola","assets/imagenes/avispa1.png");
@@ -51,6 +57,13 @@ export class Preloads extends Phaser.Scene {
       this.load.image("tutoalas1", "assets/imagenes/tutoalasescudo.png");
       this.load.image("tutoalas2", "assets/imagenes/tutoalasataque.png");
       this.load.image("ndeah", "assets/imagenes/bruh.png");
+      this.load.image("alaon1", "assets/imagenes/alanormal.png");
+      this.load.image("alaon2", "assets/imagenes/alacristal.png");
+      this.load.image("alaon3", "assets/imagenes/alaverde.png");
+      this.load.image("alaoff1", "assets/imagenes/alanormaloff.png");
+      this.load.image("alaoff2", "assets/imagenes/alacristaloff.png");
+      this.load.image("alaoff3", "assets/imagenes/alaverdeoff.png");
+      
 
       
       this.load.audio("gota", "assets/sounds/gota.mp3");
@@ -259,9 +272,9 @@ export class Preloads extends Phaser.Scene {
       });
       this.anims.create({
         key: "pof",
-        frames: this.anims.generateFrameNumbers("poof", { start: 0, end: 3 }),
+        frames: this.anims.generateFrameNumbers("poof", { start: 0, end: 4 }),
         frameRate: 8,
-        repeat: -1,
+        
       });
     
       this.scene.start("Black");
