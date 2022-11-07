@@ -69,9 +69,11 @@ export class Juego extends Phaser.Scene {
       "plataforma" + this.nivel,
       "tilesPlatform" + this.nivel
     );
+    
    
     const belowLayer = map.createLayer("fondo" + this.nivel, tilesetBelow, 0, 0);
     const worldLayer = map.createLayer("plataforma" + this.nivel, tilesetPlatform, 0, 0);
+    
     const objectsLayer = map.getObjectLayer("Objetos"); 
 
     if ((cursors = !undefined)) {
@@ -89,6 +91,7 @@ export class Juego extends Phaser.Scene {
         
         case "IZA": 
           this.iza= new Iza(this.vida, this, x, y, this.nivel);
+          this.iza.setCollideWorldBounds(false)
           break; 
 
         case "miel": 
@@ -98,8 +101,16 @@ export class Juego extends Phaser.Scene {
       }
     });
     
+
     
-    this.cameras.main.setBounds(0, 0, 640, 4288);
+    if (this.Mundo == 2){
+    const tilesetEspina = map.addTilesetImage("espinas" + this.nivel, "tilesEspinas" + this.nivel);
+    const espinaLayer = map.createLayer("espinas" + this.nivel, tilesetEspina, 0, 0);
+    espinaLayer.setCollisionByProperty({colision:true});
+    espinaLayer.renderDebug(this.add.graphics())
+    this.physics.add.overlap(this.iza, espinaLayer, null, null, this)}
+    
+    this.cameras.main.setBounds(0, 0, 640, map.heightInPixels);
     apretarE=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E)
 
     this.UI = new Interfaz(this.scene, this.score);  //se inicializa la interfaz y el score en 0. Al avanzar de nivel, se crea nueva interfaz con score que se va acumulando
@@ -116,9 +127,10 @@ export class Juego extends Phaser.Scene {
     this.pixelbruh2 = this.physics.add.sprite(640,2144,"ndeah").setScale(1,4288).setVisible(false);
     this.pixelbruh2.setImmovable(true);
     this.physics.add.collider(this.iza, this.pixelbruh2, this.funcion2, null, this);
-    this.suelo = this.physics.add.sprite(450,4275,"invisible").setScale(6.0,1).setVisible(false);
+    this.suelo = this.physics.add.sprite(450,map.heightInPixels - 13,"invisible").setScale(6.0,1).setVisible(false);
     this.suelo.setImmovable(true);
     this.physics.add.collider(this.iza, this.suelo, this.meta, null, this);
+    
     
   }
 

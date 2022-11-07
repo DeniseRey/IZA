@@ -136,12 +136,15 @@ export class Preloads extends Phaser.Scene {
       this.load.tilemapTiledJSON("map4", "assets/tilemaps/mapaideaiza4.json");
       this.load.image("tilesBelow4", "assets/tilemaps/fondo4.png");
       this.load.image("tilesPlatform4", "assets/tilemaps/plataforma4.png");
+      this.load.image("tilesEspinas4", "assets/tilemaps/espinas4.png");
       this.load.tilemapTiledJSON("map5", "assets/tilemaps/mapaideaiza5.json");
       this.load.image("tilesBelow5", "assets/tilemaps/fondo5.png");
       this.load.image("tilesPlatform5", "assets/tilemaps/plataforma5.png");
+      this.load.image("tilesEspinas5", "assets/tilemaps/espinas5.png");
       this.load.tilemapTiledJSON("map6", "assets/tilemaps/mapaideaiza6.json");
       this.load.image("tilesBelow6", "assets/tilemaps/fondo6.png");
       this.load.image("tilesPlatform6", "assets/tilemaps/plataforma6.png");
+      this.load.image("tilesEspinas6", "assets/tilemaps/espinas6.png");
       this.load.tilemapTiledJSON("map7", "assets/tilemaps/mapaideaiza7.JSON");
       this.load.image("tilesBelow7", "assets/tilemaps/fondo7.png");
       this.load.image("tilesPlatform7", "assets/tilemaps/plataforma7.png");

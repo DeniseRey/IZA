@@ -1325,6 +1325,12 @@
          "id":7,
          "name":"espinas5",
          "opacity":1,
+         "properties":[
+                {
+                 "name":"colision",
+                 "type":"bool",
+                 "value":true
+                }],
          "type":"tilelayer",
          "visible":true,
          "width":64,
@@ -1334,7 +1340,7 @@
         {
          "draworder":"topdown",
          "id":3,
-         "name":"Objetos5",
+         "name":"Objetos",
          "objects":[
                 {
                  "ellipse":true,

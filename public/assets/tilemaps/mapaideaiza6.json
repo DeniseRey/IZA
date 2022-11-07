@@ -1327,6 +1327,12 @@
          "offsetx":0,
          "offsety":64,
          "opacity":1,
+         "properties":[
+                {
+                 "name":"colision",
+                 "type":"bool",
+                 "value":true
+                }],
          "type":"tilelayer",
          "visible":true,
          "width":64,
@@ -1336,7 +1342,7 @@
         {
          "draworder":"topdown",
          "id":3,
-         "name":"Objetos6",
+         "name":"Objetos",
          "objects":[
                 {
                  "ellipse":true,
