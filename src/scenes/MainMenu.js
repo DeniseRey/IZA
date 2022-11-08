@@ -62,15 +62,36 @@ create(){
       console.log(escena); 
       this.scene.start("Creditos")})
 
-        this.add.text(200, 250, 'JUGAR', {
+      this.add.text(272, y, 'JUGAR', {
         fontFamily: 'Lilita One',
         fontSize: '30px',
-        color: '#FFE648',
+        color: '#FBF889',
         stroke: '#9C3B17',
         strokeThickness: 9,
         shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
         resolution: 2
       })
+
+      this.add.text(280, 375, 'GUÍA', {
+        fontFamily: 'Lilita One',
+        fontSize: '28px',
+        color: '#FFE648',
+        stroke: '#9C3B17',
+        strokeThickness: 7,
+        shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
+        resolution: 2
+      })
+
+      this.add.text(260, 455, 'CRÉDITOS', {
+        fontFamily: 'Lilita One',
+        fontSize: '25px',
+        color: '#FFE648',
+        stroke: '#9C3B17',
+        strokeThickness: 7,
+        shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
+        resolution: 2
+      })
+
     if(
       escena === 0 
       
