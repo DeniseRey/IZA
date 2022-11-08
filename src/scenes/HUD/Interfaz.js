@@ -3,7 +3,7 @@ import Phaser from 'phaser'
 export class Interfaz {
 	 scene;
      score = 0;
-    constructor(scene, score){
+    constructor(scene, score, mundo){
         this.scene=scene;
         this.score = score;
         this.vida = 99;
@@ -17,6 +17,9 @@ export class Interfaz {
           this.vidaText.scrollFactorX=0
           this.vidaText.scrollFactorY=0
           this.sonidogota = this.scene.scene.sound.add("gota");
+          this.alas=this.scene.scene.add.sprite(640,600,"alaon" + mundo).setOrigin(1).setScale(0.5)
+          this.alas.scrollFactorX=0
+          this.alas.scrollFactorY=0
     }
 
     collectStar(tiempo) {
@@ -27,8 +30,18 @@ export class Interfaz {
         this.score += 10;
         this.scoreText.setText(`Miel: ${this.score}`)
     }
-    hitAvispa(){
-        this.vida -= 1;
+    hitAvispa(mundo){
+        if(mundo==2){
+            this.vida -= 2;
+        }
+        else{
+            this.vida -= 1;
+        }
+        
         this.vidaText.setText(`Vidas: ${this.vida}`)
+    }
+    cooldown(texto){
+        
+        this.alas.setTexture(texto)
     }
 }

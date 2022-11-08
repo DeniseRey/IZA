@@ -72,7 +72,7 @@ create(){
         resolution: 2
       })
 
-      this.add.text(280, 375, 'GUÍA', {
+      this.add.text( this.cameras.main.centerX, this.cameras.main.centerY + this.cameras.main.centerY/3,'GUÍA', {
         fontFamily: 'Lilita One',
         fontSize: '28px',
         color: '#FFE648',
@@ -80,7 +80,7 @@ create(){
         strokeThickness: 7,
         shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
         resolution: 2
-      })
+      }).setOrigin(0.5)
 
       this.add.text(260, 455, 'CRÉDITOS', {
         fontFamily: 'Lilita One',

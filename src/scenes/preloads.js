@@ -67,6 +67,8 @@ export class Preloads extends Phaser.Scene {
       this.load.image("botonnuevo2", "assets/imagenes/botonvacio2.png")
       this.load.image("help", "assets/imagenes/aiuda.png")
       this.load.image("ventanasola", "assets/imagenes/fondoventana.png")
+      this.load.image("back1", "assets/imagenes/volvermenu1.png")
+      this.load.image("back2", "assets/imagenes/volvermenu2.png")
       
 
       
@@ -268,8 +270,8 @@ export class Preloads extends Phaser.Scene {
       this.anims.create({
         key: "shield",
         frames: this.anims.generateFrameNumbers("escudo", { start: 0, end: 30 }),
-        frameRate: 12,
-        repeat: -1,
+        frameRate: 14,
+  
       });
       this.anims.create({
         key: "spin",

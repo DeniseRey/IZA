@@ -4,6 +4,7 @@ import Enemigos from "./Personajes/Enemigo.js"
 import Recolectable from "./Recolectable/Recolectable.js";
 import { Interfaz } from "./HUD/Interfaz.js";
 
+
 var cursors;
 var gameOver;
 var Fin = false;
@@ -13,6 +14,8 @@ var colision;
 var tiempo = 0;
 var izquierda = true;
 var derecha = true;
+var cooldown = 0;
+var cooldownactivado = false;
 
 const Musica = {
   1: "musica1", 2: "musica2", 3: "musica3", 4: "musica4", 5: "musica5", 6: "musica6", 7: "musica7", 8: "musica8", 9: "musica9"
@@ -25,6 +28,7 @@ export class Juego extends Phaser.Scene {
   Mundo;
   Soloizquierda = true;
   Soloderecha = true;
+
   
   constructor() {
 
@@ -42,6 +46,10 @@ export class Juego extends Phaser.Scene {
       activado = false
       izquierda = true
       derecha = true
+      cooldown = 0
+      cooldownactivado = false
+
+
       this.music = this.sound.add(Musica [this.nivel]);
       var musicConfig = {
         mute: false,
@@ -103,17 +111,10 @@ export class Juego extends Phaser.Scene {
     
 
     
-    if (this.Mundo == 2){
-    const tilesetEspina = map.addTilesetImage("espinas" + this.nivel, "tilesEspinas" + this.nivel);
-    const espinaLayer = map.createLayer("espinas" + this.nivel, tilesetEspina, 0, 0);
-    espinaLayer.setCollisionByProperty({colision:true});
-    espinaLayer.renderDebug(this.add.graphics())
-    this.physics.add.overlap(this.iza, espinaLayer, null, null, this)}
-    
     this.cameras.main.setBounds(0, 0, 640, map.heightInPixels);
     apretarE=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E)
 
-    this.UI = new Interfaz(this.scene, this.score);  //se inicializa la interfaz y el score en 0. Al avanzar de nivel, se crea nueva interfaz con score que se va acumulando
+    this.UI = new Interfaz(this.scene, this.score, this.Mundo);  //se inicializa la interfaz y el score en 0. Al avanzar de nivel, se crea nueva interfaz con score que se va acumulando
 
     this.cameras.main.startFollow(this.iza, true, 0.25, 0.25);
     this.cameras.main.setZoom(1);
@@ -130,7 +131,7 @@ export class Juego extends Phaser.Scene {
     this.suelo = this.physics.add.sprite(450,map.heightInPixels - 13,"invisible").setScale(6.0,1).setVisible(false);
     this.suelo.setImmovable(true);
     this.physics.add.collider(this.iza, this.suelo, this.meta, null, this);
-    
+    this.final=map.heightInPixels - 80
     
   }
 
@@ -141,6 +142,8 @@ export class Juego extends Phaser.Scene {
  funcion2(){
   derecha = false
 }
+
+
 
 
 update(time,delta){
@@ -156,13 +159,43 @@ update(time,delta){
     }
   }
 
+  if (cooldownactivado){
+    cooldown += delta    //al tiempo se le suma los milisegundos de cada frame 
+    if (cooldown >= 3500){
+      cooldownactivado = false
+      this.UI.cooldown('alaon' + this.Mundo)
+      cooldown = 0
+    }
+  }
+
+  if(this.Mundo==2){
+    if(apretarE.isDown && !activado && !cooldownactivado){
+      activado=true
+      cooldownactivado=true
+      this.iza.anims.play("shield", true)  //escudo
+      this.iza.setSize(133,123)
+      setTimeout(() => {
+        this.UI.cooldown('alaoff' + this.Mundo)
+         }, 300);
+    }
+    if(this.iza.anims.currentFrame.index == 30 && activado ){
+      activado = false
+      this.iza.anims.play("caer" + this.Mundo, true);
+      this.iza.setSize(86,65)
+    }
+  }
+
 
   if(this.Mundo==3){
-    if(apretarE.isDown && !activado){
+    if(apretarE.isDown && !activado && !cooldownactivado){
       activado=true
       colision.active=true
-      this.iza.anims.play("spin", true)
+      cooldownactivado=true
+      this.iza.anims.play("spin", true)  //tornado
       this.iza.setSize(66,95)
+      setTimeout(() => {
+       this.UI.cooldown('alaoff' + this.Mundo)
+        }, 300);
      }
      if(this.iza.anims.currentFrame.index == 26 && activado ){
        activado = false
@@ -206,6 +239,9 @@ update(time,delta){
   }
   hitiza(player,enemigo){
     if (activado){
+      if(this.Mundo==2){
+        return
+      }
       this.poofavispa = this.add.sprite(enemigo.body.position.x, enemigo.body.position.y,"mala2").setOrigin(0)
       this.poofavispa.anims.play("pof", true)
       this.sonidogota = this.scene.scene.sound.add("soundpoof");
@@ -214,7 +250,7 @@ update(time,delta){
       this.UI.collectStar(800)
       return
     }
-    this.UI.hitAvispa()
+    this.UI.hitAvispa(this.Mundo)
     player.golpe();
     colision.active = false
     {player.setTint(0xff0000);this.time.delayedCall(200, () => player.clearTint())};
@@ -237,6 +273,8 @@ update(time,delta){
       Fin = true;
       this.iza.setVelocityX(0);
       this.iza.anims.play ("quieto"+ this.Mundo, true);
+      this.iza.setSize(47,70)
+      this.iza.setY(this.final)
     if (iza.body.blocked.down) {
     this.time.delayedCall(1800, () => {
       this.game.sound.stopAll();

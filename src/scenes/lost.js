@@ -1,5 +1,6 @@
 var score;
-
+import Phaser from 'phaser'
+import WebFontFile from './WebFontFile'
 export class Lost extends Phaser.Scene {
   constructor() {
 
@@ -13,6 +14,12 @@ export class Lost extends Phaser.Scene {
     this.pastscore = data.pastscore;
     this.nivel=data.nivel;
   }
+
+  preload()
+	{
+		const fonts = new WebFontFile(this.load, 'Lilita One')
+		this.load.addFile(fonts)
+	}
 
   create() {
 
@@ -39,12 +46,35 @@ export class Lost extends Phaser.Scene {
    
       console.log(this.pastscore)
 
-    const boton1 = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY + 250, 'retrybutton').setInteractive({cursor: "pointer"})
-    boton1.on('pointerover', function(){boton1.setTexture('retrybutton1')})
-    boton1.on('pointerout', function(){boton1.setTexture('retrybutton')})
+    const boton1 = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY + 250, 'botonnuevo').setInteractive({cursor: "pointer"})
+    boton1.on('pointerover', function(){boton1.setTexture('botonnuevo2')})
+    boton1.on('pointerout', function(){boton1.setTexture('botonnuevo')})
     boton1.on('pointerdown', () => {this.scene.start("Juego", {nivel:this.nivel, score:this.pastscore})})
 
+    const boton2 = this.add.sprite(50,  550, 'back1').setInteractive({cursor: "pointer"})
+    boton2.on('pointerover', function(){boton2.setTexture('back2')})
+    boton2.on('pointerout', function(){boton2.setTexture('back1')})
+    boton2.on('pointerdown', () => {this.scene.start("MainMenu", {nivel:this.nivel, score:this.pastscore})})
 
+    this.add.text(280, 25, 'OH NO', {
+      fontFamily: 'Lilita One',
+      fontSize: '28px',
+      color: '#FFE648',
+      stroke: '#9C3B17',
+      strokeThickness: 7,
+      shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
+      resolution: 2
+    })
+
+    this.add.text(280, 550, 'OTRA VEZ', {
+      fontFamily: 'Lilita One',
+      fontSize: '28px',
+      color: '#FFE648',
+      stroke: '#9C3B17',
+      strokeThickness: 7,
+      shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
+      resolution: 2
+    })
    
   }
 }
