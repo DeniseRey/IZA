@@ -7,7 +7,6 @@ export class Preloads extends Phaser.Scene {
   
     preload() {
       this.load.image("iza_logo", "assets/imagenes/titulo2.png");
-      this.load.image("creditos", "assets/imagenes/creditosback.png");
       this.load.image("tutorial", "assets/imagenes/tutorialback.png");
       this.load.image("principal","assets/imagenes/principalIza1.png");
       this.load.image("mariposa","assets/imagenes/Iza.png");

@@ -43,7 +43,7 @@ create(){
     const boton3 = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY + this.cameras.main.centerY/12, 'botonnuevo').setInteractive({cursor: "pointer"})
     boton3.on('pointerover', function(){boton3.setTexture('botonnuevo2')})
     boton3.on('pointerout', function(){boton3.setTexture('botonnuevo')})
-    boton3.on('pointerdown', () => {this.scene.start("Inter1", {nivel:9, score:0}); this.game.sound.stopAll(); escena = 0 } )  
+    boton3.on('pointerdown', () => {this.scene.start("Inter1", {nivel:1, score:0}); this.game.sound.stopAll(); escena = 0 } )  
     
       
     
@@ -62,7 +62,7 @@ create(){
       console.log(escena); 
       this.scene.start("Creditos")})
 
-      this.add.text(272, y, 'JUGAR', {
+      this.add.text(this.cameras.main.centerX, this.cameras.main.centerY + this.cameras.main.centerY/12, 'JUGAR', {
         fontFamily: 'Lilita One',
         fontSize: '30px',
         color: '#FBF889',
@@ -70,7 +70,7 @@ create(){
         strokeThickness: 9,
         shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
         resolution: 2
-      })
+      }).setOrigin(0.5)
 
       this.add.text( this.cameras.main.centerX, this.cameras.main.centerY + this.cameras.main.centerY/3,'GUÍA', {
         fontFamily: 'Lilita One',
@@ -82,7 +82,7 @@ create(){
         resolution: 2
       }).setOrigin(0.5)
 
-      this.add.text(260, 455, 'CRÉDITOS', {
+      this.add.text(this.cameras.main.centerX, this.cameras.main.centerY + this.cameras.main.centerY/1.7, 'CRÉDITOS', {
         fontFamily: 'Lilita One',
         fontSize: '25px',
         color: '#FFE648',
@@ -90,7 +90,7 @@ create(){
         strokeThickness: 7,
         shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
         resolution: 2
-      })
+      }).setOrigin(0.5)
 
     if(
       escena === 0 

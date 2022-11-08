@@ -6,7 +6,10 @@ export class Interfaz {
     constructor(scene, score, mundo){
         this.scene=scene;
         this.score = score;
-        this.vida = 99;
+        this.vida = 99;          
+        this.ventana = this.scene.scene.add.image(80,55,"ventana").setScale(0.6)
+        this.ventana.scrollFactorX=0
+        this.ventana.scrollFactorY=0
         this.scoreText = this.scene.scene.add.text(58, 52, `Miel: ${
             this.score}`, {fontFamily: "arial",fontSize: "17px",
           });
@@ -16,6 +19,7 @@ export class Interfaz {
           });
           this.vidaText.scrollFactorX=0
           this.vidaText.scrollFactorY=0
+
           this.sonidogota = this.scene.scene.sound.add("gota");
           this.alas=this.scene.scene.add.sprite(640,600,"alaon" + mundo).setOrigin(1).setScale(0.36)
           this.alas.scrollFactorX=0

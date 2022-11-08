@@ -25,7 +25,7 @@ export class Creditos extends Phaser.Scene {
         boton1.on('pointerdown', () => {this.scene.start("MainMenu")})
   
 
-        this.add.text(280, 530, 'ATRÁS', {
+        this.add.text(this.cameras.main.centerX, this.cameras.main.centerY + 250, 'ATRÁS', {
           fontFamily: 'Lilita One',
           fontSize: '28px',
           color: '#FFE648',
@@ -33,7 +33,7 @@ export class Creditos extends Phaser.Scene {
           strokeThickness: 7,
           shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
           resolution: 2
-        })
+        }).setOrigin(0.5)
     }
   
   }

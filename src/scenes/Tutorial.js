@@ -23,7 +23,7 @@ export class Tuto extends Phaser.Scene {
     boton1.on('pointerout', function(){boton1.setTexture('botonnuevo')})
     boton1.on('pointerdown', () => {this.scene.start("MainMenu")})
 
-    this.add.text(280, 530, 'ATRÁS', {
+    this.add.text(this.cameras.main.centerX, this.cameras.main.centerY + 250, 'ATRÁS', {
       fontFamily: 'Lilita One',
       fontSize: '28px',
       color: '#FFE648',
@@ -31,7 +31,27 @@ export class Tuto extends Phaser.Scene {
       strokeThickness: 7,
       shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
       resolution: 2
-    })
+    }).setOrigin(0.5)
+
+    this.add.text(this.cameras.main.centerX, 100, 'MUEVE A IZA USANDO LAS FLECHAS DEL TECLADO', {
+      fontFamily: 'Lilita One',
+      fontSize: '20px',
+      color: '#F8E71C',
+      stroke: '##853106',
+      strokeThickness: 5,
+      shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
+      resolution: 2
+    }).setOrigin(0.5)
+
+    this.add.text(this.cameras.main.centerX, 200, 'RECOLECTA TODA LA MIEL POSIBLE', {
+      fontFamily: 'Lilita One',
+      fontSize: '20px',
+      color: '#F8E71C',
+      stroke: '##853106',
+      strokeThickness: 5,
+      shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
+      resolution: 2
+    }).setOrigin(0.5)
 
 }
 
