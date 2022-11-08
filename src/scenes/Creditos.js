@@ -25,6 +25,99 @@ export class Creditos extends Phaser.Scene {
         boton1.on('pointerdown', () => {this.scene.start("MainMenu")})
   
 
+        this.add.text(this.cameras.main.centerX, 120, 'MÚSICA', {
+          fontFamily: 'Lilita One',
+          fontSize: '28px',
+          color: '#F8E71C',
+          stroke: '#853106',
+          strokeThickness: 5,
+          shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
+          resolution: 2
+        }).setOrigin(0.5)
+        this.add.text(this.cameras.main.centerX, 160, '"Fairy Forest" by DEREK FIECHTER', {
+          fontFamily: 'Lilita One',
+          fontSize: '20px',
+          color: '#F8E71C',
+          stroke: '#853106',
+          strokeThickness: 5,
+          shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
+          resolution: 2
+        }).setOrigin(0.5)
+        this.add.text(this.cameras.main.centerX, 180, '"Fairy Magic" by DEREK FIECHTER', {
+          fontFamily: 'Lilita One',
+          fontSize: '20px',
+          color: '#F8E71C',
+          stroke: '#853106',
+          strokeThickness: 5,
+          shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
+          resolution: 2
+        }).setOrigin(0.5)
+        this.add.text(this.cameras.main.centerX, 200, '"Night Fairies" by BRANDON FIETCHTER', {
+          fontFamily: 'Lilita One',
+          fontSize: '20px',
+          color: '#F8E71C',
+          stroke: '#853106',
+          strokeThickness: 5,
+          shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
+          resolution: 2
+        }).setOrigin(0.5)
+        this.add.text(this.cameras.main.centerX, 220, '"Fairy Forest" by ADRIAN von ZIEGLER', {
+          fontFamily: 'Lilita One',
+          fontSize: '20px',
+          color: '#F8E71C',
+          stroke: '#853106',
+          strokeThickness: 5,
+          shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
+          resolution: 2
+        }).setOrigin(0.5)
+        this.add.text(this.cameras.main.centerX, 240, '"Magical Forest" by the FIETCHTERS', {
+          fontFamily: 'Lilita One',
+          fontSize: '20px',
+          color: '#F8E71C',
+          stroke: '#853106',
+          strokeThickness: 5,
+          shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
+          resolution: 2
+        }).setOrigin(0.5)
+        this.add.text(this.cameras.main.centerX, 260, '"Lost Rainforest" by the FIETCHTERS', {
+          fontFamily: 'Lilita One',
+          fontSize: '20px',
+          color: '#F8E71C',
+          stroke: '#853106',
+          strokeThickness: 5,
+          shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
+          resolution: 2
+        }).setOrigin(0.5)
+        this.add.text(this.cameras.main.centerX, 300, 'A MIS AMIGOS QUE ME AYUDARON ', {
+          fontFamily: 'Lilita One',
+          fontSize: '25px',
+          color: '#F8E71C',
+          stroke: '#853106',
+          strokeThickness: 5,
+          shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
+          resolution: 2
+        }).setOrigin(0.5)
+        this.add.text(this.cameras.main.centerX, 330, 'Y EXPLICARON EL CÓDIGO ', {
+          fontFamily: 'Lilita One',
+          fontSize: '25px',
+          color: '#F8E71C',
+          stroke: '#853106',
+          strokeThickness: 5,
+          shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
+          resolution: 2
+        }).setOrigin(0.5)
+        this.add.text(this.cameras.main.centerX, 390, 'Y A MI :)', {
+          fontFamily: 'Lilita One',
+          fontSize: '30px',
+          color: '#F8E71C',
+          stroke: '#853106',
+          strokeThickness: 5,
+          shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
+          resolution: 2
+        }).setOrigin(0.5)
+
+
+
         this.add.text(this.cameras.main.centerX, this.cameras.main.centerY + 250, 'ATRÁS', {
           fontFamily: 'Lilita One',
           fontSize: '28px',

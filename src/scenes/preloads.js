@@ -68,6 +68,8 @@ export class Preloads extends Phaser.Scene {
       this.load.image("ventanasola", "assets/imagenes/fondoventana.png")
       this.load.image("back1", "assets/imagenes/volvermenu1.png")
       this.load.image("back2", "assets/imagenes/volvermenu2.png")
+      this.load.image("flechas", "assets/imagenes/flechas.png")
+      this.load.image("abejas", "assets/imagenes/abejas.png")
       
 
       
