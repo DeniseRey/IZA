@@ -1,6 +1,6 @@
 import Phaser from 'phaser'
 const VelozY = {
-	1:90, 2:100, 3:120, 4:100, 5:400, 6:400, 7:800, 8:100, 9:120
+	1:500, 2:500, 3:500, 4:90, 5:100, 6:110, 7:500, 8:100, 9:120
   }
 export default class Iza extends  Phaser.Physics.Arcade.Sprite
 {

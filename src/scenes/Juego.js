@@ -161,7 +161,7 @@ update(time,delta){
 
   if (cooldownactivado){
     cooldown += delta    //al tiempo se le suma los milisegundos de cada frame 
-    if (cooldown >= 3500){
+    if (cooldown >= 3000){
       cooldownactivado = false
       this.UI.cooldown('alaon' + this.Mundo)
       cooldown = 0
@@ -173,12 +173,14 @@ update(time,delta){
       activado=true
       cooldownactivado=true
       this.iza.anims.play("shield", true)  //escudo
+      this.sonidoescudo = this.scene.scene.sound.add("soundescudo");
+      this.sonidoescudo.play()
       this.iza.setSize(133,123)
       setTimeout(() => {
         this.UI.cooldown('alaoff' + this.Mundo)
          }, 300);
     }
-    if(this.iza.anims.currentFrame.index == 30 && activado ){
+    if(this.iza.anims.currentFrame.index == 34 && activado ){
       activado = false
       this.iza.anims.play("caer" + this.Mundo, true);
       this.iza.setSize(86,65)
@@ -191,7 +193,9 @@ update(time,delta){
       activado=true
       colision.active=true
       cooldownactivado=true
-      this.iza.anims.play("spin", true)  //tornado
+      this.iza.anims.play("spin", true)//tornado
+      this.sonidotornado = this.scene.scene.sound.add("soundspin");
+      this.sonidotornado.play()
       this.iza.setSize(66,95)
       setTimeout(() => {
        this.UI.cooldown('alaoff' + this.Mundo)
@@ -253,6 +257,8 @@ update(time,delta){
     this.UI.hitAvispa(this.Mundo)
     player.golpe();
     colision.active = false
+    this.sonidohit = this.scene.scene.sound.add("hit")
+    this.sonidohit.play()
     {player.setTint(0xff0000);this.time.delayedCall(200, () => player.clearTint())};
     if (this.UI.vida=== 0 ){
       this.physics.pause();
@@ -279,8 +285,8 @@ update(time,delta){
     this.time.delayedCall(1800, () => {
       this.game.sound.stopAll();
      
-    if (this.nivel == 3){
-      //this.scene.start("Win", {score:this.UI.score} );
+    if (this.nivel == 9){
+      this.scene.start("Win", {score:this.UI.score} );
     }
     else {
       this.scene.start("Inter1", {score:this.UI.score, nivel:this.nivel+1 }); //se pasan los puntos al inter siguiente y al nivel siguiente

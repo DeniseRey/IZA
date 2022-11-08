@@ -17,7 +17,7 @@ export class Interfaz {
           this.vidaText.scrollFactorX=0
           this.vidaText.scrollFactorY=0
           this.sonidogota = this.scene.scene.sound.add("gota");
-          this.alas=this.scene.scene.add.sprite(640,600,"alaon" + mundo).setOrigin(1).setScale(0.5)
+          this.alas=this.scene.scene.add.sprite(640,600,"alaon" + mundo).setOrigin(1).setScale(0.36)
           this.alas.scrollFactorX=0
           this.alas.scrollFactorY=0
     }

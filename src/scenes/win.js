@@ -35,9 +35,9 @@ export class Win extends Phaser.Scene {
       }).setOrigin(0.5);
    
    
-    const boton1 = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY + 250, 'atrasbutton').setInteractive({cursor: "pointer"})
-    boton1.on('pointerover', function(){boton1.setTexture('atrasbutton1')})
-    boton1.on('pointerout', function(){boton1.setTexture('atrasbutton')})
+    const boton1 = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY + 250, 'botonnuevo').setInteractive({cursor: "pointer"})
+    boton1.on('pointerover', function(){boton1.setTexture('botonnuevo2')})
+    boton1.on('pointerout', function(){boton1.setTexture('botonnuevo')})
     boton1.on('pointerdown', () => {this.scene.start("MainMenu")})
    
   
