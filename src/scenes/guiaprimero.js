@@ -26,6 +26,9 @@ export class guiaprimero extends Phaser.Scene {
 
       this.add.image(this.cameras.main.centerX, this.cameras.main.centerY, 'fondotuto').setScale(0.83,1);
       this.add.image(this.cameras.main.centerX, 260, 'tutorial').setScale(0.65,0.75);
+      this.add.image(220, 222, 'escudosolo').setScale(0.45);
+      this.add.image(420, 222, 'alacristaltuto').setScale(0.45);
+      this.add.image(this.cameras.main.centerX, 390, 'esola').setScale(0.7);
 
       this.add.text(this.cameras.main.centerX, 100, '¡IZA DESBLOQUEÓ UNA NUEVA FORMA PARA SU CAPA!', {
         fontFamily: 'Lilita One',
@@ -37,7 +40,7 @@ export class guiaprimero extends Phaser.Scene {
         resolution: 2
       }).setOrigin(0.5)
 
-      this.add.text(this.cameras.main.centerX, 180, 'AHORA IZA PUEDE INVOCAR UN ESCUDO', {
+      this.add.text(this.cameras.main.centerX, 130, 'AHORA IZA PUEDE INVOCAR UN ESCUDO', {
         fontFamily: 'Lilita One',
         fontSize: '18px',
         color: '#F8E71C',
@@ -46,7 +49,7 @@ export class guiaprimero extends Phaser.Scene {
         shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
         resolution: 2
       }).setOrigin(0.5)
-      this.add.text(this.cameras.main.centerX, 240, 'PARA SORTEAR A LAS MOLESTAS AVISPAS', {
+      this.add.text(this.cameras.main.centerX, 150, 'PARA SORTEAR A LAS MOLESTAS AVISPAS', {
         fontFamily: 'Lilita One',
         fontSize: '18px',
         color: '#F8E71C',
@@ -55,7 +58,16 @@ export class guiaprimero extends Phaser.Scene {
         shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
         resolution: 2
       }).setOrigin(0.5)
-      this.add.text(this.cameras.main.centerX, 290, 'USA LA TECLA E PARA ACTIVAR EL ESCUDO Y ASÍ VOLVERTE INMUNE', {
+      this.add.text(this.cameras.main.centerX, 290, 'USA LA TECLA "E" PARA ACTIVAR EL ESCUDO', {
+        fontFamily: 'Lilita One',
+        fontSize: '18px',
+        color: '#F8E71C',
+        stroke: '#853106',
+        strokeThickness: 5,
+        shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
+        resolution: 2
+      }).setOrigin(0.5)
+      this.add.text(this.cameras.main.centerX, 310, 'Y ASÍ VOLVERTE INMUNE', {
         fontFamily: 'Lilita One',
         fontSize: '18px',
         color: '#F8E71C',
@@ -73,7 +85,7 @@ export class guiaprimero extends Phaser.Scene {
         shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
         resolution: 2
       }).setOrigin(0.5)
-      this.add.text(this.cameras.main.centerX, 450, '¡ÚSALA SABIAMENTE!', {
+      this.add.text(this.cameras.main.centerX, 430, '¡ÚSALA SABIAMENTE!', {
         fontFamily: 'Lilita One',
         fontSize: '25px',
         color: '#F8E71C',

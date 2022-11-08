@@ -11,7 +11,7 @@ export class Black extends Phaser.Scene {
         this.add.image(this.cameras.main.centerX, 190, 'click').setScale(0.65,0.65);
   
         const boton1 = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY, 'primero').setInteractive({cursor: "pointer"});
-        boton1.on('pointerdown', () => {this.scene.start("guiauno")})
+        boton1.on('pointerdown', () => {this.scene.start("guiados")})
   
     }
   
