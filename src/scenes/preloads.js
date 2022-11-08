@@ -100,6 +100,10 @@ export class Preloads extends Phaser.Scene {
         frameWidth: 57,
         frameHeight: 52,
       });
+      this.load.spritesheet("avispa3", "assets/imagenes/spriteavispa2.png", {
+        frameWidth: 45,
+        frameHeight: 45,
+      });
       this.load.spritesheet("cayendo1", "assets/imagenes/sprite1.png", {
         frameWidth: 86,
         frameHeight: 65,

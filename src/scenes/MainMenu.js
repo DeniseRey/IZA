@@ -43,7 +43,7 @@ create(){
     const boton3 = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY + this.cameras.main.centerY/12, 'botonnuevo').setInteractive({cursor: "pointer"})
     boton3.on('pointerover', function(){boton3.setTexture('botonnuevo2')})
     boton3.on('pointerout', function(){boton3.setTexture('botonnuevo')})
-    boton3.on('pointerdown', () => {this.scene.start("Inter1", {nivel:4, score:0}); this.game.sound.stopAll(); escena = 0 } )  
+    boton3.on('pointerdown', () => {this.scene.start("Inter1", {nivel:9, score:0}); this.game.sound.stopAll(); escena = 0 } )  
     
       
     
