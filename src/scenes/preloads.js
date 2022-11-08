@@ -70,6 +70,7 @@ export class Preloads extends Phaser.Scene {
       this.load.image("back2", "assets/imagenes/volvermenu2.png")
       this.load.image("flechas", "assets/imagenes/flechas.png")
       this.load.image("abejas", "assets/imagenes/abejas.png")
+      this.load.image("fondotuto", "assets/imagenes/fondotuto.png")
       
 
       

@@ -1,5 +1,6 @@
 import Phaser from 'phaser'
 
+
 export class Interfaz {
 	 scene;
      score = 0;
@@ -10,12 +11,12 @@ export class Interfaz {
         this.ventana = this.scene.scene.add.image(80,55,"ventana").setScale(0.6)
         this.ventana.scrollFactorX=0
         this.ventana.scrollFactorY=0
-        this.scoreText = this.scene.scene.add.text(58, 52, `Miel: ${
+        this.scoreText = this.scene.scene.add.text(40, 55, `Miel: ${
             this.score}`, {fontFamily: "arial",fontSize: "17px",
           });
           this.scoreText.scrollFactorX=0
           this.scoreText.scrollFactorY=0
-          this.vidaText = this.scene.scene.add.text(90, 25, `Vidas: ${this.vida}`, {fontFamily: "arial", fontSize: "17px",
+          this.vidaText = this.scene.scene.add.text(40, 30, `Vidas: ${this.vida}`, {fontFamily: "arial", fontSize: "17px",
           });
           this.vidaText.scrollFactorX=0
           this.vidaText.scrollFactorY=0
