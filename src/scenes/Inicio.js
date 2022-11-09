@@ -1,9 +1,9 @@
 import Button from "../scenes/Botones/button.js";
 
 export class Black extends Phaser.Scene {
-    // Se extiende de Phaser.Scene porque es una escena
+
     constructor() {
-      // Se asigna una key para despues poder llamar a la escena
+
       super("Black");
     }
       create() {

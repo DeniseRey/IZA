@@ -14,7 +14,7 @@ export class Inter extends Phaser.Scene {
   }
 
     create() {
-      //agregar if this.nivel para saber que imágen mostrar
+
       this.add.image(this.cameras.main.centerX, this.cameras.main.centerY, 'inter' + this.nivel).setScale(0.83,1);
       
 

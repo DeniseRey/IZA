@@ -5,9 +5,9 @@ import { DE_DE, EN_US, ES_AR, PT_BR } from './Servicios/languajes'
 import { getTranslations, getPhrase } from "./Servicios/traducciones";
 
 export class Creditos extends Phaser.Scene {
-    // Se extiende de Phaser.Scene porque es una escena
+
     constructor() {
-      // Se asigna una key para despues poder llamar a la escena
+
       super("Creditos");
     }
 

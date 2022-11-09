@@ -58,7 +58,6 @@ export class Idioma extends Phaser.Scene {
     }
     update(){
         if(this.wasChangedLanguage === "FETCHED"){
-           // console.log("hola!")
             this.wasChangedLanguage = "READY";
             this.actualizartexto.setText(getPhrase('ATRÁS'));
             
