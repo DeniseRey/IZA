@@ -36,7 +36,7 @@ export class Creditos extends Phaser.Scene {
           shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
           resolution: 2
         }).setOrigin(0.5)
-        this.add.text(this.cameras.main.centerX, 160,'"Fairy Forest" by DEREK FIECHTER', {
+        this.add.text(this.cameras.main.centerX, 160,'"Fairy Forest" by DEREK FIETCHTER', {
           fontFamily: 'Lilita One',
           fontSize: '20px',
           color: '#F8E71C',
@@ -45,7 +45,7 @@ export class Creditos extends Phaser.Scene {
           shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
           resolution: 2
         }).setOrigin(0.5)
-        this.add.text(this.cameras.main.centerX, 180, '"Fairy Magic" by DEREK FIECHTER', {
+        this.add.text(this.cameras.main.centerX, 180, '"Fairy Magic" by DEREK FIETCHTER', {
           fontFamily: 'Lilita One',
           fontSize: '20px',
           color: '#F8E71C',
