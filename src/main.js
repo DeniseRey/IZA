@@ -34,7 +34,7 @@ const config = {
     default: "arcade",
     arcade: {
       
-      debug: true,
+      debug: false,
     },
   },
 	scene: [ Preloads, Black, MainMenu, Tuto, guiaprimero, guiasegundo, Creditos, Idioma, Inter, Juego, Lost, Win]

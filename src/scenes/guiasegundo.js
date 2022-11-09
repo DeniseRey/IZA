@@ -98,7 +98,7 @@ export class guiasegundo extends Phaser.Scene {
       const boton1 = this.add.sprite(this.cameras.main.centerX, 520, 'flechabutton').setInteractive({cursor: "pointer"})
     boton1.on('pointerover', function(){boton1.setTexture('flechabutton1')})
     boton1.on('pointerout', function(){boton1.setTexture('flechabutton')})
-    boton1.on('pointerdown', () => {this.scene.start("Juego", {nivel:this.nivel, score:this.score})})
+    boton1.on('pointerdown', () => {this.scene.start("Inter1", {score:this.score, nivel:this.nivel });})
   }
 
 }

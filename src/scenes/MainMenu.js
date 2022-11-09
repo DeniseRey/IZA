@@ -1,6 +1,8 @@
 import Button from "../scenes/Botones/button.js";
 import Phaser from 'phaser'
 import WebFontFile from './WebFontFile'
+import { DE_DE, EN_US, ES_AR, PT_BR } from './Servicios/languajes'
+import { getTranslations, getPhrase } from "./Servicios/traducciones";
 
 var escena = 0;
  export class MainMenu extends Phaser.Scene {
@@ -17,7 +19,7 @@ var escena = 0;
 
 create(){ 
   
-  console.log(escena); 
+  getTranslations(EN_US) 
   
   this.music1 = this.sound.add("mainmusic");
     var musicConfig = {
@@ -70,7 +72,7 @@ create(){
       console.log(escena); 
       this.scene.start("idioma")})
 
-      this.add.text(this.cameras.main.centerX, this.cameras.main.centerY + this.cameras.main.centerY/12, 'JUGAR', {
+      this.add.text(this.cameras.main.centerX, this.cameras.main.centerY + this.cameras.main.centerY/12, getPhrase('JUGAR') , {
         fontFamily: 'Lilita One',
         fontSize: '30px',
         color: '#FBF889',

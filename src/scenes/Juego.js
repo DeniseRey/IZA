@@ -297,6 +297,12 @@ update(time,delta){
     if (this.nivel == 9){
       this.scene.start("Win", {score:this.UI.score} );
     }
+    else if(this.nivel+1 == 4){
+      this.scene.start("guiauno", {score:this.UI.score, nivel:this.nivel+1 });
+    }
+    else if(this.nivel+1 == 7){
+      this.scene.start("guiados", {score:this.UI.score, nivel:this.nivel+1 });
+    }
     else {
       this.scene.start("Inter1", {score:this.UI.score, nivel:this.nivel+1 }); //se pasan los puntos al inter siguiente y al nivel siguiente
     }

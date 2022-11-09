@@ -1,6 +1,6 @@
 module.exports = {
-    ES_AR: 'es_AR',
-    EN_US: 'en_US',
-    PT_BR: 'pt_BR',
-    DE_DE: 'de_DE',
+    ES_AR: 'es-Ar',
+    EN_US: 'en-US',
+    PT_BR: 'pt-BR',
+    DE_DE: 'de-DE',
   };

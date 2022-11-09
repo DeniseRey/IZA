@@ -58,9 +58,9 @@ export class guiaprimero extends Phaser.Scene {
         shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
         resolution: 2
       }).setOrigin(0.5)
-      this.add.text(this.cameras.main.centerX, 160, '(¡CUIDADO! AHORA RESTAN 2 VIDAS)', {
+      this.add.text(this.cameras.main.centerX, 165, '(¡CUIDADO! AHORA RESTAN 2 VIDAS)', {
         fontFamily: 'Lilita One',
-        fontSize: '18px',
+        fontSize: '12px',
         color: '#F8E71C',
         stroke: '#853106',
         strokeThickness: 5,
@@ -108,7 +108,7 @@ export class guiaprimero extends Phaser.Scene {
       const boton1 = this.add.sprite(this.cameras.main.centerX, 520, 'flechabutton').setInteractive({cursor: "pointer"})
     boton1.on('pointerover', function(){boton1.setTexture('flechabutton1')})
     boton1.on('pointerout', function(){boton1.setTexture('flechabutton')})
-    boton1.on('pointerdown', () => {this.scene.start("Juego", {nivel:this.nivel, score:this.score})})
+    boton1.on('pointerdown', () => {this.scene.start("Inter1", {score:this.score, nivel:this.nivel });})
   }
 
 }
