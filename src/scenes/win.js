@@ -1,6 +1,8 @@
 var score;
 import Phaser from 'phaser'
 import WebFontFile from './WebFontFile'
+import { DE_DE, EN_US, ES_AR, PT_BR } from './Servicios/languajes'
+import { getTranslations, getPhrase } from "./Servicios/traducciones";
 export class Win extends Phaser.Scene {
   constructor() {
 
@@ -34,19 +36,19 @@ export class Win extends Phaser.Scene {
     this.music.play(musicConfig);
 
     this.add.image(this.cameras.main.centerX, this.cameras.main.centerY, 'win').setScale(0.65,0.65);
-    this.add.image(300, 265, 'izawin').setScale(0.70);
+    this.add.image(300, 255, 'izawin').setScale(0.70);
     this.add.image(this.cameras.main.centerX, 485, 'ventanamiel').setScale(0.95,0.95);
     this.add.text(this.cameras.main.centerX, 493,
       ` ${score}`, {fontFamily: "arial",fontSize: "22px",
       }).setOrigin(0.5);
    
    
-    const boton1 = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY + 250, 'botonnuevo').setInteractive({cursor: "pointer"})
-    boton1.on('pointerover', function(){boton1.setTexture('botonnuevo2')})
-    boton1.on('pointerout', function(){boton1.setTexture('botonnuevo')})
-    boton1.on('pointerdown', () => {this.scene.start("MainMenu")})
+      const boton2 = this.add.sprite(50,  550, 'back1').setInteractive({cursor: "pointer"})
+      boton2.on('pointerover', function(){boton2.setTexture('back2')})
+      boton2.on('pointerout', function(){boton2.setTexture('back1')})
+      boton2.on('pointerdown', () => {this.scene.start("MainMenu")})
 
-    this.add.text(this.cameras.main.centerX, 55, '¡LO LOGRASTE!', {
+    this.add.text(this.cameras.main.centerX, 55, getPhrase('¡LO LOGRASTE!'), {
       fontFamily: 'Lilita One',
       fontSize: '65px',
       color: '#FFEB67',
@@ -55,7 +57,7 @@ export class Win extends Phaser.Scene {
       resolution: 2
     }).setOrigin(0.5)
    
-    this.add.text(this.cameras.main.centerX, 428, 'MIEL RECOLECTADA:', {
+    this.add.text(this.cameras.main.centerX, 428, getPhrase('MIEL RECOLECTADA:'), {
 			fontFamily: 'Lilita One',
 			fontSize: '38px',
 			color: '#FFDFAF',
@@ -63,15 +65,7 @@ export class Win extends Phaser.Scene {
 			strokeThickness: 7
 		}).setOrigin(0.5)
 
-    this.add.text(this.cameras.main.centerX, this.cameras.main.centerY + 250, 'MENU', {
-      fontFamily: 'Lilita One',
-      fontSize: '25px',
-      color: '#FFE648',
-      stroke: '#9C3B17',
-      strokeThickness: 7,
-      shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
-      resolution: 2
-    }).setOrigin(0.5)
+    
   
   }
 }

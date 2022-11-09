@@ -1,6 +1,8 @@
 var score;
 import Phaser from 'phaser'
 import WebFontFile from './WebFontFile'
+import { DE_DE, EN_US, ES_AR, PT_BR } from './Servicios/languajes'
+import { getTranslations, getPhrase } from "./Servicios/traducciones";
 export class Lost extends Phaser.Scene {
   constructor() {
 
@@ -53,9 +55,9 @@ export class Lost extends Phaser.Scene {
     const boton2 = this.add.sprite(50,  550, 'back1').setInteractive({cursor: "pointer"})
     boton2.on('pointerover', function(){boton2.setTexture('back2')})
     boton2.on('pointerout', function(){boton2.setTexture('back1')})
-    boton2.on('pointerdown', () => {this.scene.start("MainMenu", {nivel:this.nivel, score:this.pastscore})})
+    boton2.on('pointerdown', () => {this.scene.start("MainMenu")})
 
-    this.add.text(this.cameras.main.centerX, 45, '...OH NO', {
+    this.add.text(this.cameras.main.centerX, 45, getPhrase('...OH NO'), {
       fontFamily: 'Lilita One',
       fontSize: '38px',
       color: '#FFE648',
@@ -64,7 +66,7 @@ export class Lost extends Phaser.Scene {
       shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
       resolution: 2
     }).setOrigin(0.5)
-    this.add.text(this.cameras.main.centerX, 85, 'PERDISTE', {
+    this.add.text(this.cameras.main.centerX, 85, getPhrase('PERDISTE'), {
       fontFamily: 'Lilita One',
       fontSize: '38px',
       color: '#FFE648',
@@ -74,7 +76,7 @@ export class Lost extends Phaser.Scene {
       resolution: 2
     }).setOrigin(0.5)
 
-    this.add.text(this.cameras.main.centerX, 428, 'MIEL RECOLECTADA:', {
+    this.add.text(this.cameras.main.centerX, 428, getPhrase('MIEL RECOLECTADA:'), {
 			fontFamily: 'Lilita One',
 			fontSize: '38px',
 			color: '#FFDFAF',
@@ -83,7 +85,7 @@ export class Lost extends Phaser.Scene {
 		}).setOrigin(0.5)
 
 
-    this.add.text(this.cameras.main.centerX, this.cameras.main.centerY + 250, 'OTRA VEZ', {
+    this.add.text(this.cameras.main.centerX, this.cameras.main.centerY + 250, getPhrase('OTRA VEZ'), {
       fontFamily: 'Lilita One',
       fontSize: '25px',
       color: '#FFE648',

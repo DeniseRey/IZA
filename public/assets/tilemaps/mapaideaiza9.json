@@ -775,6 +775,42 @@
                  "width":0,
                  "x":258,
                  "y":3815
+                }, 
+                {
+                 "height":0,
+                 "id":49,
+                 "name":"miel",
+                 "point":true,
+                 "rotation":0,
+                 "type":"miel",
+                 "visible":true,
+                 "width":0,
+                 "x":290,
+                 "y":2507
+                }, 
+                {
+                 "height":0,
+                 "id":50,
+                 "name":"miel",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":475,
+                 "y":560
+                }, 
+                {
+                 "height":0,
+                 "id":51,
+                 "name":"miel",
+                 "point":true,
+                 "rotation":0,
+                 "type":"miel",
+                 "visible":true,
+                 "width":0,
+                 "x":228,
+                 "y":996
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -783,7 +819,7 @@
          "y":0
         }],
  "nextlayerid":4,
- "nextobjectid":49,
+ "nextobjectid":52,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.8.5",

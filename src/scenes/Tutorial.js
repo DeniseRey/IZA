@@ -1,6 +1,9 @@
 import Button from "../scenes/Botones/button.js";
 import Phaser from 'phaser'
 import WebFontFile from './WebFontFile'
+import { DE_DE, EN_US, ES_AR, PT_BR } from './Servicios/languajes'
+import { getTranslations, getPhrase } from "./Servicios/traducciones";
+
 export class Tuto extends Phaser.Scene {
   constructor() {
 
@@ -27,7 +30,7 @@ export class Tuto extends Phaser.Scene {
     boton1.on('pointerout', function(){boton1.setTexture('botonnuevo')})
     boton1.on('pointerdown', () => {this.scene.start("MainMenu")})
 
-    this.add.text(this.cameras.main.centerX, this.cameras.main.centerY + 250, 'ATRÁS', {
+    this.add.text(this.cameras.main.centerX, this.cameras.main.centerY + 250, getPhrase('ATRÁS'), {
       fontFamily: 'Lilita One',
       fontSize: '28px',
       color: '#FFE648',
@@ -37,7 +40,7 @@ export class Tuto extends Phaser.Scene {
       resolution: 2
     }).setOrigin(0.5)
 
-    this.add.text(this.cameras.main.centerX, 100, 'MUEVE A IZA USANDO LAS FLECHAS DEL TECLADO', {
+    this.add.text(this.cameras.main.centerX, 100, getPhrase('MUEVE A IZA USANDO LAS FLECHAS DEL TECLADO'), {
       fontFamily: 'Lilita One',
       fontSize: '20px',
       color: '#F8E71C',
@@ -47,7 +50,7 @@ export class Tuto extends Phaser.Scene {
       resolution: 2
     }).setOrigin(0.5)
 
-    this.add.text(this.cameras.main.centerX, 200, 'RECOLECTA TODA LA MIEL POSIBLE', {
+    this.add.text(this.cameras.main.centerX, 200, getPhrase('RECOLECTA TODA LA MIEL POSIBLE'), {
       fontFamily: 'Lilita One',
       fontSize: '20px',
       color: '#F8E71C',
@@ -57,7 +60,7 @@ export class Tuto extends Phaser.Scene {
       resolution: 2
     }).setOrigin(0.5)
 
-    this.add.text(this.cameras.main.centerX, 300, 'EVITA A LAS PELIGROSAS AVISPAS', {
+    this.add.text(this.cameras.main.centerX, 300, getPhrase('EVITA A LAS PELIGROSAS AVISPAS'), {
       fontFamily: 'Lilita One',
       fontSize: '20px',
       color: '#F8E71C',
@@ -67,7 +70,7 @@ export class Tuto extends Phaser.Scene {
       resolution: 2
     }).setOrigin(0.5)
 
-    this.add.text(this.cameras.main.centerX, 400, '¡LLEGA AL SUELO SANO Y SALVO!', {
+    this.add.text(this.cameras.main.centerX, 400, getPhrase('¡LLEGA AL SUELO SANO Y SALVO!'), {
       fontFamily: 'Lilita One',
       fontSize: '20px',
       color: '#F8E71C',

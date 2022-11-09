@@ -1,6 +1,8 @@
 import Button from "../scenes/Botones/button.js";
 import Phaser from 'phaser'
 import WebFontFile from './WebFontFile'
+import { DE_DE, EN_US, ES_AR, PT_BR } from './Servicios/languajes'
+import { getTranslations, getPhrase } from "./Servicios/traducciones";
 
 export class Creditos extends Phaser.Scene {
     // Se extiende de Phaser.Scene porque es una escena
@@ -25,7 +27,7 @@ export class Creditos extends Phaser.Scene {
         boton1.on('pointerdown', () => {this.scene.start("MainMenu")})
   
 
-        this.add.text(this.cameras.main.centerX, 120, 'MÚSICA', {
+        this.add.text(this.cameras.main.centerX, 120, getPhrase('MÚSICA'), {
           fontFamily: 'Lilita One',
           fontSize: '28px',
           color: '#F8E71C',
@@ -34,7 +36,7 @@ export class Creditos extends Phaser.Scene {
           shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
           resolution: 2
         }).setOrigin(0.5)
-        this.add.text(this.cameras.main.centerX, 160, '"Fairy Forest" by DEREK FIECHTER', {
+        this.add.text(this.cameras.main.centerX, 160,'"Fairy Forest" by DEREK FIECHTER', {
           fontFamily: 'Lilita One',
           fontSize: '20px',
           color: '#F8E71C',
@@ -88,7 +90,7 @@ export class Creditos extends Phaser.Scene {
           shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
           resolution: 2
         }).setOrigin(0.5)
-        this.add.text(this.cameras.main.centerX, 300, 'A MIS AMIGOS QUE ME AYUDARON ', {
+        this.add.text(this.cameras.main.centerX, 300, getPhrase('A MIS AMIGOS QUE'), {
           fontFamily: 'Lilita One',
           fontSize: '25px',
           color: '#F8E71C',
@@ -97,7 +99,7 @@ export class Creditos extends Phaser.Scene {
           shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
           resolution: 2
         }).setOrigin(0.5)
-        this.add.text(this.cameras.main.centerX, 330, 'Y EXPLICARON EL CÓDIGO ', {
+        this.add.text(this.cameras.main.centerX, 330, getPhrase('ME EXPLICARON EL CÓDIGO'), {
           fontFamily: 'Lilita One',
           fontSize: '25px',
           color: '#F8E71C',
@@ -107,7 +109,7 @@ export class Creditos extends Phaser.Scene {
           resolution: 2
         }).setOrigin(0.5)
      
-        this.add.text(this.cameras.main.centerX, 390, 'Y A MI  :)  DENISE REY', {
+        this.add.text(this.cameras.main.centerX, 390, getPhrase('...Y A MI  :)  DENISE REY'), {
           fontFamily: 'Lilita One',
           fontSize: '30px',
           color: '#F8E71C',
@@ -119,7 +121,7 @@ export class Creditos extends Phaser.Scene {
 
 
 
-        this.add.text(this.cameras.main.centerX, this.cameras.main.centerY + 250, 'ATRÁS', {
+        this.add.text(this.cameras.main.centerX, this.cameras.main.centerY + 250, getPhrase('ATRÁS'), {
           fontFamily: 'Lilita One',
           fontSize: '28px',
           color: '#FFE648',

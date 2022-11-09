@@ -672,6 +672,18 @@
                  "width":0,
                  "x":728,
                  "y":828
+                }, 
+                {
+                 "height":0,
+                 "id":44,
+                 "name":"miel",
+                 "point":true,
+                 "rotation":0,
+                 "type":"",
+                 "visible":true,
+                 "width":0,
+                 "x":240,
+                 "y":712
                 }],
          "opacity":1,
          "type":"objectgroup",
@@ -680,7 +692,7 @@
          "y":0
         }],
  "nextlayerid":4,
- "nextobjectid":44,
+ "nextobjectid":45,
  "orientation":"orthogonal",
  "renderorder":"right-down",
  "tiledversion":"1.8.5",

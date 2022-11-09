@@ -26,8 +26,8 @@ export class guiaprimero extends Phaser.Scene {
 
       this.add.image(this.cameras.main.centerX, this.cameras.main.centerY, 'fondotuto').setScale(0.83,1);
       this.add.image(this.cameras.main.centerX, 260, 'tutorial').setScale(0.65,0.75);
-      this.add.image(220, 222, 'escudosolo').setScale(0.45);
-      this.add.image(420, 222, 'alacristaltuto').setScale(0.45);
+      this.add.image(220, 226, 'escudosolo').setScale(0.45);
+      this.add.image(420, 226, 'alacristaltuto').setScale(0.45);
       this.add.image(this.cameras.main.centerX, 390, 'esola').setScale(0.7);
 
       this.add.text(this.cameras.main.centerX, 100, '¡IZA DESBLOQUEÓ UNA NUEVA FORMA PARA SU CAPA!', {
@@ -58,11 +58,11 @@ export class guiaprimero extends Phaser.Scene {
         shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
         resolution: 2
       }).setOrigin(0.5)
-      this.add.text(this.cameras.main.centerX, 165, '(¡CUIDADO! AHORA RESTAN 2 VIDAS)', {
+      this.add.text(this.cameras.main.centerX, 168, '(¡CUIDADO! EN ÉSTE LUGAR RESTAN 2 VIDAS)', {
         fontFamily: 'Lilita One',
         fontSize: '12px',
-        color: '#F8E71C',
-        stroke: '#853106',
+        color: '#FFFFFF',
+        stroke: '#000000',
         strokeThickness: 5,
         shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
         resolution: 2

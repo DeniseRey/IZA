@@ -45,7 +45,7 @@ create(){
     const boton3 = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY + this.cameras.main.centerY/12, 'botonnuevo').setInteractive({cursor: "pointer"})
     boton3.on('pointerover', function(){boton3.setTexture('botonnuevo2')})
     boton3.on('pointerout', function(){boton3.setTexture('botonnuevo')})
-    boton3.on('pointerdown', () => {this.scene.start("Inter1", {nivel:3, score:0}); this.game.sound.stopAll(); escena = 0 } )  
+    boton3.on('pointerdown', () => {this.scene.start("Inter1", {nivel:1, score:0}); this.game.sound.stopAll(); escena = 0 } )  
     
       
     
@@ -82,7 +82,7 @@ create(){
         resolution: 2
       }).setOrigin(0.5)
 
-      this.add.text( this.cameras.main.centerX, this.cameras.main.centerY + this.cameras.main.centerY/3,'GUÍA', {
+      this.add.text( this.cameras.main.centerX, this.cameras.main.centerY + this.cameras.main.centerY/3,getPhrase('GUÍA'), {
         fontFamily: 'Lilita One',
         fontSize: '28px',
         color: '#FFE648',
@@ -92,7 +92,7 @@ create(){
         resolution: 2
       }).setOrigin(0.5)
 
-      this.add.text(this.cameras.main.centerX, this.cameras.main.centerY + this.cameras.main.centerY/1.7, 'CRÉDITOS', {
+      this.add.text(this.cameras.main.centerX, this.cameras.main.centerY + this.cameras.main.centerY/1.7, getPhrase('CRÉDITOS'), {
         fontFamily: 'Lilita One',
         fontSize: '25px',
         color: '#FFE648',
@@ -102,7 +102,7 @@ create(){
         resolution: 2
       }).setOrigin(0.5)
 
-      this.add.text(this.cameras.main.centerX, this.cameras.main.centerY + this.cameras.main.centerY/1.2, 'IDIOMA', {
+      this.add.text(this.cameras.main.centerX, this.cameras.main.centerY + this.cameras.main.centerY/1.2, getPhrase('IDIOMA'), {
         fontFamily: 'Lilita One',
         fontSize: '25px',
         color: '#FFE648',
