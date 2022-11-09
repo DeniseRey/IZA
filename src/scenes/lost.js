@@ -37,8 +37,7 @@ export class Lost extends Phaser.Scene {
     this.music.play(musicConfig);
     
     this.add.image(this.cameras.main.centerX, this.cameras.main.centerY, 'lost').setScale(0.65,0.65);
-    this.add.image(this.cameras.main.centerX, 290, 'izalost').setScale(0.57);
-    this.add.image(this.cameras.main.centerX, 435, 'mielrecolectada').setScale(0.65,0.65);
+    this.add.image(this.cameras.main.centerX, 265, 'izalost').setScale(0.57);
     this.add.image(this.cameras.main.centerX, 485, 'ventanamiel').setScale(0.95,0.95);
     this.add.text(this.cameras.main.centerX, 493,
       ` ${score}`, {fontFamily: "arial",fontSize: "22px",
@@ -56,25 +55,43 @@ export class Lost extends Phaser.Scene {
     boton2.on('pointerout', function(){boton2.setTexture('back1')})
     boton2.on('pointerdown', () => {this.scene.start("MainMenu", {nivel:this.nivel, score:this.pastscore})})
 
-    this.add.text(280, 25, 'OH NO', {
+    this.add.text(this.cameras.main.centerX, 45, '...OH NO', {
       fontFamily: 'Lilita One',
-      fontSize: '28px',
+      fontSize: '38px',
       color: '#FFE648',
       stroke: '#9C3B17',
       strokeThickness: 7,
       shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
       resolution: 2
-    })
+    }).setOrigin(0.5)
+    this.add.text(this.cameras.main.centerX, 85, 'PERDISTE', {
+      fontFamily: 'Lilita One',
+      fontSize: '38px',
+      color: '#FFE648',
+      stroke: '#9C3B17',
+      strokeThickness: 7,
+      shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
+      resolution: 2
+    }).setOrigin(0.5)
 
-    this.add.text(280, 550, 'OTRA VEZ', {
+    this.add.text(this.cameras.main.centerX, 428, 'MIEL RECOLECTADA:', {
+			fontFamily: 'Lilita One',
+			fontSize: '38px',
+			color: '#FFDFAF',
+			stroke: '#CD2A7C',
+			strokeThickness: 7
+		}).setOrigin(0.5)
+
+
+    this.add.text(this.cameras.main.centerX, this.cameras.main.centerY + 250, 'OTRA VEZ', {
       fontFamily: 'Lilita One',
-      fontSize: '28px',
+      fontSize: '25px',
       color: '#FFE648',
       stroke: '#9C3B17',
       strokeThickness: 7,
       shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
       resolution: 2
-    })
+    }).setOrigin(0.5)
    
   }
 }

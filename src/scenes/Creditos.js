@@ -106,12 +106,13 @@ export class Creditos extends Phaser.Scene {
           shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
           resolution: 2
         }).setOrigin(0.5)
-        this.add.text(this.cameras.main.centerX, 390, 'Y A MI :)', {
+     
+        this.add.text(this.cameras.main.centerX, 390, 'Y A MI  :)  DENISE REY', {
           fontFamily: 'Lilita One',
           fontSize: '30px',
           color: '#F8E71C',
-          stroke: '#853106',
-          strokeThickness: 5,
+			    stroke: '#CC2B7B',
+          strokeThickness: 7,
           shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
           resolution: 2
         }).setOrigin(0.5)
