@@ -1,5 +1,6 @@
 import Phaser from 'phaser'
-
+import { DE_DE, EN_US, ES_AR, PT_BR } from '../Servicios/languajes'
+import { getTranslations, getPhrase } from "../Servicios/traducciones";
 
 export class Interfaz {
 	 scene;
@@ -11,12 +12,18 @@ export class Interfaz {
         this.ventana = this.scene.scene.add.image(80,55,"ventana").setScale(0.6)
         this.ventana.scrollFactorX=0
         this.ventana.scrollFactorY=0
-        this.scoreText = this.scene.scene.add.text(40, 55, `Miel: ${
-            this.score}`, {fontFamily: "arial",fontSize: "17px",
+        this.scoreText = this.scene.scene.add.text(40, 55, getPhrase('MIEL') + ": " + 
+            this.score, {fontFamily: 'Lilita One',fontSize: "17px",
+            color: '#FFE648',
+            stroke: '#9C3B17',
+            strokeThickness: 3,
           });
           this.scoreText.scrollFactorX=0
           this.scoreText.scrollFactorY=0
-          this.vidaText = this.scene.scene.add.text(40, 30, `Vidas: ${this.vida}`, {fontFamily: "arial", fontSize: "17px",
+          this.vidaText = this.scene.scene.add.text(40, 30, getPhrase('VIDAS') + ": " + this.vida, {fontFamily: 'Lilita One', fontSize: "17px",
+          color: '#FFE648',
+          stroke: '#9C3B17',
+          strokeThickness: 3,
           });
           this.vidaText.scrollFactorX=0
           this.vidaText.scrollFactorY=0

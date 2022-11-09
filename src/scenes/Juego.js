@@ -3,7 +3,8 @@ import Iza from "./Personajes/Iza.js";
 import Enemigos from "./Personajes/Enemigo.js"
 import Recolectable from "./Recolectable/Recolectable.js";
 import { Interfaz } from "./HUD/Interfaz.js";
-
+import WebFontFile from './WebFontFile'
+import Phaser from 'phaser'
 
 var cursors;
 var gameOver;

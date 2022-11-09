@@ -1,4 +1,5 @@
-
+import { DE_DE, EN_US, ES_AR, PT_BR } from './Servicios/languajes'
+import { getTranslations, getPhrase } from "./Servicios/traducciones";
 export class Preloads extends Phaser.Scene {
     constructor() {
   
@@ -6,6 +7,7 @@ export class Preloads extends Phaser.Scene {
     }
   
     preload() {
+      getTranslations(ES_AR) 
       this.load.image("iza_logo", "assets/imagenes/titulo2.png");
       this.load.image("tutorial", "assets/imagenes/tutorialback.png");
       this.load.image("principal","assets/imagenes/principalIza1.png");

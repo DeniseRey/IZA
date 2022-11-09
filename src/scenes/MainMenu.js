@@ -19,7 +19,7 @@ var escena = 0;
 
 create(){ 
   
-  getTranslations(EN_US) 
+  
   
   this.music1 = this.sound.add("mainmusic");
     var musicConfig = {
