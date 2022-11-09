@@ -6,17 +6,7 @@ import { Interfaz } from "./HUD/Interfaz.js";
 import WebFontFile from './WebFontFile'
 import Phaser from 'phaser'
 
-var cursors;
-var gameOver;
-var Fin = false;
-var apretarE;
-var activado = false;
-var colision;
-var tiempo = 0;
-var izquierda = true;
-var derecha = true;
-var cooldown = 0;
-var cooldownactivado = false;
+
 
 const Musica = {
   1: "musica1", 2: "musica2", 3: "musica3", 4: "musica4", 5: "musica5", 6: "musica6", 7: "musica7", 8: "musica8", 9: "musica9"
@@ -31,7 +21,17 @@ export class Juego extends Phaser.Scene {
   Soloderecha = true;
   sonidoescudo;
   sonidotornado;
-
+  cursors;
+  gameOver;
+  Fin = false;
+  apretarE;
+  activado = false;
+  colision;
+  tiempo = 0;
+  izquierda = true;
+  derecha = true;
+  cooldown = 0;
+  cooldownactivado = false;
   
   constructor() {
 
@@ -46,11 +46,11 @@ export class Juego extends Phaser.Scene {
   }
 
     create() {
-      activado = false
-      izquierda = true
-      derecha = true
-      cooldown = 0
-      cooldownactivado = false
+      this.activado = false
+      this.izquierda = true
+      this.derecha = true
+      this.cooldown = 0
+      this.cooldownactivado = false
 
 
       this.music = this.sound.add(Musica [this.nivel]);
@@ -68,7 +68,7 @@ export class Juego extends Phaser.Scene {
       this.Mundo = Phaser.Math.CeilTo(this.nivel/3)  //Ceilto redondea para arriba. Teniendo en cuenta que cada mundo tiene 3 niveles, se hace una división para definir a que mundo pertenece cada nivel
       console.log(this.Mundo)
       
-      Fin = false;
+      this.Fin = false;
       this.reiniciartiempo()
 
       
@@ -87,8 +87,8 @@ export class Juego extends Phaser.Scene {
     
     const objectsLayer = map.getObjectLayer("Objetos"); 
 
-    if ((cursors = !undefined)) {
-      cursors = this.input.keyboard.createCursorKeys();
+    if ((this.cursors = !undefined)) {
+      this.cursors = this.input.keyboard.createCursorKeys();
     }
 
 
@@ -96,14 +96,14 @@ export class Juego extends Phaser.Scene {
       const { x = 0, y = 0, name, type } = objData;
       switch (name) {
 
-        case "abeja": 
-          this.Enemigos.push(new Enemigos(this, x, y, this.Mundo)) ;
-          break;
-        
         case "IZA": 
           this.iza= new Iza(this.vida, this, x, y, this.nivel);
           this.iza.setCollideWorldBounds(false)
           break; 
+        
+        case "abeja": 
+          this.Enemigos.push(new Enemigos(this, x, y, this.Mundo)) ;
+          break;
 
         case "miel": 
           this.Recolectables.push(new Recolectable(this, 10, x, y));
@@ -115,7 +115,7 @@ export class Juego extends Phaser.Scene {
 
     
     this.cameras.main.setBounds(0, 0, 640, map.heightInPixels);
-    apretarE=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E)
+    this.apretarE=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E)
 
     this.UI = new Interfaz(this.scene, this.score, this.Mundo);  //se inicializa la interfaz y el score en 0. Al avanzar de nivel, se crea nueva interfaz con score que se va acumulando
     this.sonidotornado = this.sound.add("soundspin");
@@ -125,7 +125,7 @@ export class Juego extends Phaser.Scene {
     this.cameras.main.setZoom(1);
 
     this.physics.add.overlap(this.iza, this.Recolectables, this.collectMiel, null, this);
-    colision = this.physics.add.overlap(this.iza, this.Enemigos, this.hitiza, null, this); 
+    this.colision = this.physics.add.overlap(this.iza, this.Enemigos, this.hitiza, null, this); 
 
     this.pixelbruh = this.physics.add.sprite(0,2144,"ndeah").setScale(1,4288).setVisible(false);
     this.pixelbruh.setImmovable(true);
@@ -141,49 +141,49 @@ export class Juego extends Phaser.Scene {
   }
 
  funcion1(){
-  izquierda = false
+  this.izquierda = false
  }
 
  funcion2(){
-  derecha = false
+  this.derecha = false
 }
 
 reiniciartiempo(){
   if(this.Mundo == 1){
-    tiempo = 500
+    this.tiempo = 500
   }
   else {
-    tiempo = 1500
+    this.tiempo = 1500
   }
 }
 
 
 update(time,delta){
-  if(Fin == true){
+  if(this.Fin == true){
     return;
   }
 
-  if (!colision.active){
-    tiempo -= delta    //al tiempo se le suma los milisegundos de cada frame 
-    if (tiempo <= 0){
-      colision.active = true
+  if (!this.colision.active){
+    this.tiempo -= delta    //al tiempo se le suma los milisegundos de cada frame 
+    if (this.tiempo <= 0){
+      this.colision.active = true
       this.reiniciartiempo()
     }
   }
 
-  if (cooldownactivado){
-    cooldown += delta    //al tiempo se le suma los milisegundos de cada frame 
-    if (cooldown >= 3000){
-      cooldownactivado = false
+  if (this.cooldownactivado){
+    this.cooldown += delta    //al tiempo se le suma los milisegundos de cada frame 
+    if (this.cooldown >= 3000){
+      this.cooldownactivado = false
       this.UI.cooldown('alaon' + this.Mundo)
-      cooldown = 0
+      this.cooldown = 0
     }
   }
 
   if(this.Mundo==2){
-    if(apretarE.isDown && !activado && !cooldownactivado){
-      activado=true
-      cooldownactivado=true
+    if(this.apretarE.isDown && !this.activado && !this.cooldownactivado){
+      this.activado=true
+      this.cooldownactivado=true
       this.iza.anims.play("shield", true)  //escudo
       this.sonidoescudo.play()
       this.iza.setSize(133,123)
@@ -191,8 +191,8 @@ update(time,delta){
         this.UI.cooldown('alaoff' + this.Mundo)
          }, 300);
     }
-    if(this.iza.anims.currentFrame.index == 34 && activado ){
-      activado = false
+    if(this.iza.anims.currentFrame.index == 34 && this.activado ){
+      this.activado = false
       this.iza.anims.play("caer" + this.Mundo, true);
       this.iza.setSize(86,65)
     }
@@ -200,10 +200,10 @@ update(time,delta){
 
 
   if(this.Mundo==3){
-    if(apretarE.isDown && !activado && !cooldownactivado){
-      activado=true
-      colision.active=true
-      cooldownactivado=true
+    if(this.apretarE.isDown && !this.activado && !this.cooldownactivado){
+      this.activado=true
+      this.colision.active=true
+      this.cooldownactivado=true
       this.iza.anims.play("spin", true)//tornado
       this.sonidotornado.play()
       this.iza.setSize(66,95)
@@ -211,8 +211,8 @@ update(time,delta){
        this.UI.cooldown('alaoff' + this.Mundo)
         }, 300);
      }
-     if(this.iza.anims.currentFrame.index == 26 && activado ){
-       activado = false
+     if(this.iza.anims.currentFrame.index == 26 && this.activado ){
+      this.activado = false
        this.iza.anims.play("caer" + this.Mundo, true);
        this.iza.setSize(86,65)
      }
@@ -220,29 +220,29 @@ update(time,delta){
 
   
   
-  if (cursors.left.isDown && izquierda && this.Soloizquierda) {
-    if(!activado){
+  if (this.cursors.left.isDown && this.izquierda && this.Soloizquierda) {
+    if(!this.activado){
       this.iza.anims.play("left" + this.Mundo, true);
     }
     this.iza.setVelocityX(-160);
-    derecha = true;
+    this.derecha = true;
     this.Soloderecha = false;
 
-  } else if (cursors.right.isDown && derecha && this.Soloderecha) {
+  } else if (this.cursors.right.isDown && this.derecha && this.Soloderecha) {
     this.iza.setVelocityX(160);
-    izquierda = true;
+    this.izquierda = true;
     this.Soloizquierda = false;
-    if(!activado){
+    if(!this.activado){
     this.iza.anims.play("right" + this.Mundo, true);}
   } else {
     this.Soloderecha = true;
     this.Soloizquierda = true;
-    if(!activado){
+    if(!this.activado){
     this.iza.anims.play("caer" + this.Mundo, true);}
     this.iza.setVelocityX(0);
 
   }
-  if (cursors.up.isDown && this.iza.body.blocked.down) {
+  if (this.cursors.up.isDown && this.iza.body.blocked.down) {
     this.iza.setVelocityY(-330);
   }
 
@@ -252,7 +252,7 @@ update(time,delta){
     miel.destroy();
   }
   hitiza(player,enemigo){
-    if (activado){
+    if (this.activado){
       if(this.Mundo==2){
         return
       }
@@ -266,7 +266,7 @@ update(time,delta){
     }
     this.UI.hitAvispa(this.Mundo)
     player.golpe();
-    colision.active = false
+    this.colision.active = false
     this.sonidohit = this.scene.scene.sound.add("hit")
     this.sonidohit.play()
     {player.setTint(0xff0000);this.time.delayedCall(200, () => player.clearTint())};
@@ -274,9 +274,9 @@ update(time,delta){
       this.physics.pause();
      
       player.setTint(0xff0000);
-      Fin=true;
+      this.Fin=true;
       player.anims.play("golpe" + this.Mundo);
-      gameOver = true;
+      this.gameOver = true;
       this.game.sound.stopAll();
       this.sonidofail.play()
       setTimeout(() => {
@@ -286,7 +286,7 @@ update(time,delta){
   }
 
   meta(iza,suelo) { 
-      Fin = true;
+      this.Fin = true;
       this.iza.setVelocityX(0);
       this.iza.anims.play ("quieto"+ this.Mundo, true);
       this.iza.setSize(47,70)
