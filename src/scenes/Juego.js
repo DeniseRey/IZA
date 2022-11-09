@@ -28,6 +28,8 @@ export class Juego extends Phaser.Scene {
   Mundo;
   Soloizquierda = true;
   Soloderecha = true;
+  sonidoescudo;
+  sonidotornado;
 
   
   constructor() {
@@ -66,14 +68,14 @@ export class Juego extends Phaser.Scene {
       console.log(this.Mundo)
       
       Fin = false;
-      
+      this.reiniciartiempo()
 
       
       const map = this.make.tilemap({ key: "map" + this.nivel });
      
 
       const tilesetBelow = map.addTilesetImage("fondo"+ this.nivel, "tilesBelow" + this.nivel);
-    const tilesetPlatform = map.addTilesetImage(
+      const tilesetPlatform = map.addTilesetImage(
       "plataforma" + this.nivel,
       "tilesPlatform" + this.nivel
     );
@@ -94,7 +96,7 @@ export class Juego extends Phaser.Scene {
       switch (name) {
 
         case "abeja": 
-          this.Enemigos.push(new Enemigos(this, x, y)) ;
+          this.Enemigos.push(new Enemigos(this, x, y, this.Mundo)) ;
           break;
         
         case "IZA": 
@@ -115,7 +117,9 @@ export class Juego extends Phaser.Scene {
     apretarE=this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.E)
 
     this.UI = new Interfaz(this.scene, this.score, this.Mundo);  //se inicializa la interfaz y el score en 0. Al avanzar de nivel, se crea nueva interfaz con score que se va acumulando
-
+    this.sonidotornado = this.sound.add("soundspin");
+    this.sonidoescudo = this.sound.add("soundescudo");
+    this.sonidofail = this.sound.add('fail')
     this.cameras.main.startFollow(this.iza, true, 0.25, 0.25);
     this.cameras.main.setZoom(1);
 
@@ -143,7 +147,14 @@ export class Juego extends Phaser.Scene {
   derecha = false
 }
 
-
+reiniciartiempo(){
+  if(this.Mundo == 1){
+    tiempo = 500
+  }
+  else {
+    tiempo = 1500
+  }
+}
 
 
 update(time,delta){
@@ -152,10 +163,10 @@ update(time,delta){
   }
 
   if (!colision.active){
-    tiempo += delta    //al tiempo se le suma los milisegundos de cada frame 
-    if (tiempo >= 1500){
+    tiempo -= delta    //al tiempo se le suma los milisegundos de cada frame 
+    if (tiempo <= 0){
       colision.active = true
-      tiempo = 0
+      this.reiniciartiempo()
     }
   }
 
@@ -173,7 +184,6 @@ update(time,delta){
       activado=true
       cooldownactivado=true
       this.iza.anims.play("shield", true)  //escudo
-      this.sonidoescudo = this.scene.scene.sound.add("soundescudo");
       this.sonidoescudo.play()
       this.iza.setSize(133,123)
       setTimeout(() => {
@@ -194,7 +204,6 @@ update(time,delta){
       colision.active=true
       cooldownactivado=true
       this.iza.anims.play("spin", true)//tornado
-      this.sonidotornado = this.scene.scene.sound.add("soundspin");
       this.sonidotornado.play()
       this.iza.setSize(66,95)
       setTimeout(() => {
@@ -268,7 +277,7 @@ update(time,delta){
       player.anims.play("golpe" + this.Mundo);
       gameOver = true;
       this.game.sound.stopAll();
-       //fail.play()
+      this.sonidofail.play()
       setTimeout(() => {
       this.scene.start("Lost",{ score:this.UI.score, nivel:this.nivel, pastscore:this.score });
       }, 2500); 

@@ -108,11 +108,11 @@ export class Preloads extends Phaser.Scene {
         frameWidth: 45,
         frameHeight: 45,
       });
-      this.load.spritesheet("avispa2", "assets/imagenes/spriteavispamiel.png", {
+      this.load.spritesheet("avispa3", "assets/imagenes/spriteavispa3.png", {
         frameWidth: 57,
         frameHeight: 52,
       });
-      this.load.spritesheet("avispa3", "assets/imagenes/spriteavispa2.png", {
+      this.load.spritesheet("avispa2", "assets/imagenes/spriteavispa2.png", {
         frameWidth: 45,
         frameHeight: 45,
       });
@@ -241,9 +241,17 @@ export class Preloads extends Phaser.Scene {
         frameRate: 10,
         repeat: -1,
       });
+
       this.anims.create({
         key: "mala2",
         frames: this.anims.generateFrameNumbers("avispa2", { start: 0, end: 3 }),
+        frameRate: 10,
+        repeat: -1,
+      });
+
+      this.anims.create({
+        key: "mala3",
+        frames: this.anims.generateFrameNumbers("avispa3", { start: 0, end: 3 }),
         frameRate: 10,
         repeat: -1,
       });

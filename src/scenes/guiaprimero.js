@@ -58,6 +58,16 @@ export class guiaprimero extends Phaser.Scene {
         shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
         resolution: 2
       }).setOrigin(0.5)
+      this.add.text(this.cameras.main.centerX, 160, '(¡CUIDADO! AHORA RESTAN 2 VIDAS)', {
+        fontFamily: 'Lilita One',
+        fontSize: '18px',
+        color: '#F8E71C',
+        stroke: '#853106',
+        strokeThickness: 5,
+        shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
+        resolution: 2
+      }).setOrigin(0.5)
+
       this.add.text(this.cameras.main.centerX, 290, 'USA LA TECLA "E" PARA ACTIVAR EL ESCUDO', {
         fontFamily: 'Lilita One',
         fontSize: '18px',
