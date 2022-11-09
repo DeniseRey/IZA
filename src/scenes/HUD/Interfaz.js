@@ -12,7 +12,7 @@ export class Interfaz {
         this.ventana = this.scene.scene.add.image(80,55,"ventana").setScale(0.6)
         this.ventana.scrollFactorX=0
         this.ventana.scrollFactorY=0
-        this.scoreText = this.scene.scene.add.text(40, 55, getPhrase('MIEL') + ": " + 
+        this.scoreText = this.scene.scene.add.text(30, 55, getPhrase('MIEL') + ": " + 
             this.score, {fontFamily: 'Lilita One',fontSize: "17px",
             color: '#FFFFFF',
             stroke: '#000000',

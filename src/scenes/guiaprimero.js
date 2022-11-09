@@ -1,6 +1,8 @@
 import Button from "../scenes/Botones/button.js";
 import Phaser from 'phaser'
 import WebFontFile from './WebFontFile'
+import { DE_DE, EN_US, ES_AR, PT_BR } from './Servicios/languajes'
+import { getTranslations, getPhrase } from "./Servicios/traducciones";
 
 export class guiaprimero extends Phaser.Scene {
 
@@ -22,15 +24,14 @@ export class guiaprimero extends Phaser.Scene {
 
 
     create() {
-      //agregar if this.nivel para saber que imágen mostrar
-
+      
       this.add.image(this.cameras.main.centerX, this.cameras.main.centerY, 'fondotuto').setScale(0.83,1);
       this.add.image(this.cameras.main.centerX, 260, 'tutorial').setScale(0.65,0.75);
       this.add.image(220, 226, 'escudosolo').setScale(0.45);
       this.add.image(420, 226, 'alacristaltuto').setScale(0.45);
       this.add.image(this.cameras.main.centerX, 390, 'esola').setScale(0.7);
 
-      this.add.text(this.cameras.main.centerX, 100, '¡IZA DESBLOQUEÓ UNA NUEVA FORMA PARA SU CAPA!', {
+      this.add.text(this.cameras.main.centerX, 100, getPhrase('¡IZA DESBLOQUEÓ UNA NUEVA FORMA PARA SU CAPA!'), {
         fontFamily: 'Lilita One',
         fontSize: '21px',
         color: '#F8E71C',
@@ -40,7 +41,7 @@ export class guiaprimero extends Phaser.Scene {
         resolution: 2
       }).setOrigin(0.5)
 
-      this.add.text(this.cameras.main.centerX, 130, 'AHORA IZA PUEDE INVOCAR UN ESCUDO', {
+      this.add.text(this.cameras.main.centerX, 130, getPhrase('AHORA IZA PUEDE INVOCAR UN ESCUDO'), {
         fontFamily: 'Lilita One',
         fontSize: '18px',
         color: '#F8E71C',
@@ -49,7 +50,7 @@ export class guiaprimero extends Phaser.Scene {
         shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
         resolution: 2
       }).setOrigin(0.5)
-      this.add.text(this.cameras.main.centerX, 150, 'PARA SORTEAR A LAS MOLESTAS AVISPAS', {
+      this.add.text(this.cameras.main.centerX, 150, getPhrase('PARA SORTEAR A LAS MOLESTAS AVISPAS'), {
         fontFamily: 'Lilita One',
         fontSize: '18px',
         color: '#F8E71C',
@@ -58,7 +59,7 @@ export class guiaprimero extends Phaser.Scene {
         shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
         resolution: 2
       }).setOrigin(0.5)
-      this.add.text(this.cameras.main.centerX, 168, '(¡CUIDADO! EN ÉSTE LUGAR RESTAN 2 VIDAS)', {
+      this.add.text(this.cameras.main.centerX, 168, getPhrase('(¡CUIDADO! EN ÉSTE LUGAR RESTAN 2 VIDAS)'), {
         fontFamily: 'Lilita One',
         fontSize: '12px',
         color: '#FFFFFF',
@@ -68,7 +69,7 @@ export class guiaprimero extends Phaser.Scene {
         resolution: 2
       }).setOrigin(0.5)
 
-      this.add.text(this.cameras.main.centerX, 290, 'USA LA TECLA "E" PARA ACTIVAR EL ESCUDO', {
+      this.add.text(this.cameras.main.centerX, 290, getPhrase('USA LA TECLA "E" PARA ACTIVAR EL ESCUDO'), {
         fontFamily: 'Lilita One',
         fontSize: '18px',
         color: '#F8E71C',
@@ -77,7 +78,7 @@ export class guiaprimero extends Phaser.Scene {
         shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
         resolution: 2
       }).setOrigin(0.5)
-      this.add.text(this.cameras.main.centerX, 310, 'Y ASÍ VOLVERTE INMUNE', {
+      this.add.text(this.cameras.main.centerX, 310, getPhrase('Y ASÍ VOLVERTE INMUNE'), {
         fontFamily: 'Lilita One',
         fontSize: '18px',
         color: '#F8E71C',
@@ -86,7 +87,7 @@ export class guiaprimero extends Phaser.Scene {
         shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
         resolution: 2
       }).setOrigin(0.5)
-      this.add.text(this.cameras.main.centerX, 350, 'LA HABILIDAD TIENE UN TIEMPO DE ENFRIAMIENTO', {
+      this.add.text(this.cameras.main.centerX, 350, getPhrase('LA HABILIDAD TIENE UN TIEMPO DE ENFRIAMIENTO'), {
         fontFamily: 'Lilita One',
         fontSize: '18px',
         color: '#F8E71C',
@@ -95,7 +96,7 @@ export class guiaprimero extends Phaser.Scene {
         shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
         resolution: 2
       }).setOrigin(0.5)
-      this.add.text(this.cameras.main.centerX, 430, '¡ÚSALA SABIAMENTE!', {
+      this.add.text(this.cameras.main.centerX, 430, getPhrase('¡ÚSALA SABIAMENTE!'), {
         fontFamily: 'Lilita One',
         fontSize: '25px',
         color: '#F8E71C',

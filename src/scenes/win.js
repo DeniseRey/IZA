@@ -53,7 +53,7 @@ export class Win extends Phaser.Scene {
       fontSize: '65px',
       color: '#FFEB67',
       stroke: '#CC2B7B',
-      strokeThickness: 9,
+      strokeThickness: 12,
       resolution: 2
     }).setOrigin(0.5)
    
