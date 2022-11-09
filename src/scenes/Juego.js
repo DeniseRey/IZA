@@ -270,7 +270,7 @@ update(time,delta){
     this.sonidohit = this.scene.scene.sound.add("hit")
     this.sonidohit.play()
     {player.setTint(0xff0000);this.time.delayedCall(200, () => player.clearTint())};
-    if (this.UI.vida=== 0 ){
+    if (this.UI.vida <= 0 ){
       this.physics.pause();
      
       player.setTint(0xff0000);
