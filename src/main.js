@@ -11,6 +11,7 @@ import { Win } from './scenes/win';
 import { Juego } from './scenes/Juego';
 import { guiaprimero } from './scenes/guiaprimero';
 import { guiasegundo } from './scenes/guiasegundo';
+import { Idioma } from './scenes/idioma';
 
 
 const config = {
@@ -36,7 +37,7 @@ const config = {
       debug: true,
     },
   },
-	scene: [ Preloads, Black, MainMenu, Tuto, guiaprimero, guiasegundo, Creditos, Inter, Juego, Lost, Win]
+	scene: [ Preloads, Black, MainMenu, Tuto, guiaprimero, guiasegundo, Creditos, Idioma, Inter, Juego, Lost, Win]
 }
 
 export default new Phaser.Game(config)

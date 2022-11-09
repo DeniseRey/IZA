@@ -62,6 +62,14 @@ create(){
       console.log(escena); 
       this.scene.start("Creditos")})
 
+      const boton4 = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY + this.cameras.main.centerY/1.2, 'botonnuevo').setInteractive({cursor: "pointer"})
+    boton4.on('pointerover', function(){boton4.setTexture('botonnuevo2')})
+    boton4.on('pointerout', function(){boton4.setTexture('botonnuevo')})
+    boton4.on('pointerdown', () => {
+      escena = 1 ; 
+      console.log(escena); 
+      this.scene.start("idioma")})
+
       this.add.text(this.cameras.main.centerX, this.cameras.main.centerY + this.cameras.main.centerY/12, 'JUGAR', {
         fontFamily: 'Lilita One',
         fontSize: '30px',
@@ -83,6 +91,16 @@ create(){
       }).setOrigin(0.5)
 
       this.add.text(this.cameras.main.centerX, this.cameras.main.centerY + this.cameras.main.centerY/1.7, 'CRÉDITOS', {
+        fontFamily: 'Lilita One',
+        fontSize: '25px',
+        color: '#FFE648',
+        stroke: '#9C3B17',
+        strokeThickness: 7,
+        shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
+        resolution: 2
+      }).setOrigin(0.5)
+
+      this.add.text(this.cameras.main.centerX, this.cameras.main.centerY + this.cameras.main.centerY/1.2, 'IDIOMA', {
         fontFamily: 'Lilita One',
         fontSize: '25px',
         color: '#FFE648',
