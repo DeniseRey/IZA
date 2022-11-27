@@ -127,10 +127,10 @@ export class Juego extends Phaser.Scene {
     this.physics.add.overlap(this.iza, this.Recolectables, this.collectMiel, null, this);
     this.colision = this.physics.add.overlap(this.iza, this.Enemigos, this.hitiza, null, this); 
 
-    this.pixelbruh = this.physics.add.sprite(0,2144,"ndeah").setScale(1,4288).setVisible(false);
+    this.pixelbruh = this.physics.add.sprite(0,2144,"pixel").setScale(1,4288).setVisible(false);
     this.pixelbruh.setImmovable(true);
     this.physics.add.collider(this.iza, this.pixelbruh, this.funcion1, null, this);
-    this.pixelbruh2 = this.physics.add.sprite(640,2144,"ndeah").setScale(1,4288).setVisible(false);
+    this.pixelbruh2 = this.physics.add.sprite(640,2144,"pixel").setScale(1,4288).setVisible(false);
     this.pixelbruh2.setImmovable(true);
     this.physics.add.collider(this.iza, this.pixelbruh2, this.funcion2, null, this);
     this.suelo = this.physics.add.sprite(450,map.heightInPixels - 13,"invisible").setScale(6.0,1).setVisible(false);

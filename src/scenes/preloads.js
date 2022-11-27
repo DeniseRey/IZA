@@ -57,7 +57,7 @@ export class Preloads extends Phaser.Scene {
       this.load.image("primero", "assets/imagenes/izaquietoprimero.png");
       this.load.image("tutoalas1", "assets/imagenes/tutoalasescudo.png");
       this.load.image("tutoalas2", "assets/imagenes/tutoalasataque.png");
-      this.load.image("ndeah", "assets/imagenes/bruh.png");
+      this.load.image("pixel", "assets/imagenes/bruh.png");
       this.load.image("alaon1", "assets/imagenes/alanormal.png");
       this.load.image("alaon2", "assets/imagenes/alacristal.png");
       this.load.image("alaon3", "assets/imagenes/alaverde.png");
