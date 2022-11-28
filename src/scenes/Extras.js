@@ -25,6 +25,16 @@ export class Extras extends Phaser.Scene {
     boton1.on('pointerout', function(){boton1.setTexture('botonnuevo')})
     boton1.on('pointerdown', () => {this.scene.start("MainMenu")})
 
+    this.add.text(this.cameras.main.centerX, 55, getPhrase('EXTRAS'), {
+        fontFamily: 'Lilita One',
+        fontSize: '50px',
+        color: '#FFEB67',
+        stroke: '#CC2B7B',
+        strokeThickness: 10,
+        resolution: 2
+      }).setOrigin(0.5)
+   
+
     this.add.text(this.cameras.main.centerX, this.cameras.main.centerY + 250, getPhrase('ATRÁS'), {
       fontFamily: 'Lilita One',
       fontSize: '28px',
