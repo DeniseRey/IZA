@@ -12,7 +12,7 @@ import { Juego } from './scenes/Juego';
 import { guiaprimero } from './scenes/guiaprimero';
 import { guiasegundo } from './scenes/guiasegundo';
 import { Idioma } from './scenes/idioma';
-
+import { Extras } from './scenes/Extras';
 
 const config = {
 	type: Phaser.AUTO,
@@ -37,7 +37,7 @@ const config = {
       debug: false,
     },
   },
-	scene: [ Preloads, Black, MainMenu, Tuto, guiaprimero, guiasegundo, Creditos, Idioma, Inter, Juego, Lost, Win]
+	scene: [ Preloads, Black, MainMenu, Tuto, Extras, guiaprimero, guiasegundo, Creditos, Idioma, Inter, Juego, Lost, Win]
 }
 
 export default new Phaser.Game(config)

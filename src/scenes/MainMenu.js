@@ -72,6 +72,15 @@ create(){
       console.log(escena); 
       this.scene.start("idioma")})
 
+
+    const boton5 = this.add.sprite(560, this.cameras.main.centerY + this.cameras.main.centerY/1.2, 'botoncorazon').setInteractive({cursor: "pointer"})
+    boton5.on('pointerover', function(){boton5.setTexture('botoncorazon1')})
+    boton5.on('pointerout', function(){boton5.setTexture('botoncorazon')})
+    boton5.on('pointerdown', () => {
+      escena = 1 ; 
+      console.log(escena); 
+      this.scene.start("Extras")})
+
       this.add.text(this.cameras.main.centerX, this.cameras.main.centerY + this.cameras.main.centerY/12, getPhrase('JUGAR') , {
         fontFamily: 'Lilita One',
         fontSize: '30px',
