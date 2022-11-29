@@ -4,7 +4,7 @@ const PROJECT_ID = '41';
 let translations = null;
 let language = ES_AR;
 export async function getTranslations(lang = language, callback) {
-    localStorage.clear();
+    localStorage.removeItem('translations');
     language = lang;
 
     return await fetch("https://traduci-la-strapi.herokuapp.com/api/translations/41/" + language )

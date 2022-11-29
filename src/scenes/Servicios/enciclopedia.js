@@ -1,25 +1,32 @@
-let info
+let info = null
 
-export async function getInfo(callback) {
-    localStorage.clear();
+export async function getInfo() {
+    localStorage.removeItem("info");
     
-    return await fetch("https://iza-api.onrender.com/butterflies", {mode: 'no-cors'})
-    .then(response => response.text())
+    return await fetch("https://iza-api.onrender.com/butterflies")
+    .then(response => response.json())
     .then(data => {
-        const promise1 = Promise.resolve(data ? JSON.parse(data) : {})
-        
-        promise1.then(data2=>{
-            console.log(data)
-            localStorage.setItem('info', JSON.parse(data[0]));
-            info = data;
-            console.log(info)
-        })
-      
-    if(callback) callback()
-    });
+        localStorage.setItem('info', JSON.stringify(data));
+        info = data;
+    })
 }
 
-export function getParrafo(key) {
-   
-    return info;
+function getLocalInfo(){
+    if (!info){
+        const data = localStorage.getItem("info");
+        info = data ? JSON.parse(data) : [];
+    }
+    return info
 }
+
+export function getPageCount(){
+    const data = getLocalInfo()
+    return data.length
+}
+
+export function getPageInfo(pageNumber){
+    const data = getLocalInfo()
+    return data[pageNumber -1]
+
+}
+
