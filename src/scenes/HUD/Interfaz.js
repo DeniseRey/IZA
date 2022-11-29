@@ -8,7 +8,7 @@ export class Interfaz {
     constructor(scene, score, mundo){
         this.scene=scene;
         this.score = score;
-        this.vida = 500;          
+        this.vida = 3;          
         this.ventana = this.scene.scene.add.image(80,55,"ventana").setScale(0.6)
         this.ventana.scrollFactorX=0
         this.ventana.scrollFactorY=0

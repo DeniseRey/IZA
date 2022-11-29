@@ -2,7 +2,7 @@ import Phaser from 'phaser'
 import WebFontFile from './WebFontFile'
 import { DE_DE, EN_US, ES_AR, PT_BR } from './Servicios/languajes'
 import { getTranslations, getPhrase } from "./Servicios/traducciones";
-import { getInfo, getParrafo } from './Servicios/enciclopedia';
+//import { getInfo, getParrafo } from './Servicios/enciclopedia';
 
 export class Creditos extends Phaser.Scene {
 
@@ -16,7 +16,7 @@ export class Creditos extends Phaser.Scene {
 		  this.load.addFile(fonts)
 	  }
     create() {
-      console.log(getParrafo(0))
+      //console.log(getParrafo(0))
       this.add.image(this.cameras.main.centerX, this.cameras.main.centerY, 'principal').setScale(0.83,1);
       this.add.image(this.cameras.main.centerX, 260, 'ventanasola').setScale(0.65,0.75);
       this.add.image(535, 475, 'help').setScale(0.65,0.75);

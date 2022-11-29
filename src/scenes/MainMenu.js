@@ -2,7 +2,7 @@ import Phaser from 'phaser'
 import WebFontFile from './WebFontFile'
 import { DE_DE, EN_US, ES_AR, PT_BR } from './Servicios/languajes'
 import { getTranslations, getPhrase } from "./Servicios/traducciones";
-import { getInfo } from './Servicios/enciclopedia';
+//import { getInfo } from './Servicios/enciclopedia';
 
 var escena = 0;
 export class MainMenu extends Phaser.Scene {
@@ -12,7 +12,7 @@ export class MainMenu extends Phaser.Scene {
 
   preload()
 	{
-    getInfo()
+    //getInfo()
 		const fonts = new WebFontFile(this.load, 'Lilita One')
 		this.load.addFile(fonts)
 	}
