@@ -1,4 +1,3 @@
-import Button from "../scenes/Botones/button.js";
 import Phaser from 'phaser'
 import WebFontFile from './WebFontFile'
 import { DE_DE, EN_US, ES_AR, PT_BR } from './Servicios/languajes'
@@ -6,7 +5,6 @@ import { getTranslations, getPhrase } from "./Servicios/traducciones";
 
 export class Tuto extends Phaser.Scene {
   constructor() {
-
     super("Tuto");
   }
 
@@ -23,8 +21,6 @@ export class Tuto extends Phaser.Scene {
     this.add.image(this.cameras.main.centerX, 150, 'flechas')
     this.add.image(this.cameras.main.centerX, 250, 'miel')
     this.add.image(this.cameras.main.centerX, 350, 'abejas')
-
-
     const boton1 = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY + 250, 'botonnuevo').setInteractive({cursor: "pointer"})
     boton1.on('pointerover', function(){boton1.setTexture('botonnuevo2')})
     boton1.on('pointerout', function(){boton1.setTexture('botonnuevo')})
@@ -79,7 +75,5 @@ export class Tuto extends Phaser.Scene {
       shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
       resolution: 2
     }).setOrigin(0.5)
-
-}
-
+  }
 }

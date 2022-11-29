@@ -1,7 +1,8 @@
 import Phaser from 'phaser'
 const VelozY = {
 	1:90, 2:100, 3:110, 4:90, 5:100, 6:110, 7:90, 8:100, 9:110
-  }
+}
+
 export default class Iza extends  Phaser.Physics.Arcade.Sprite
 {
 	constructor(vida, scene, x, y, velocidadY)
@@ -14,7 +15,6 @@ export default class Iza extends  Phaser.Physics.Arcade.Sprite
 		this.setVelocityY(VelozY[velocidadY])
 		this.anims.play("caer1")
 
-		
 	}
 	golpe(){
 		this.vida-=1;

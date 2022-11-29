@@ -5,13 +5,10 @@ import { DE_DE, EN_US, ES_AR, PT_BR } from './Servicios/languajes'
 import { getTranslations, getPhrase } from "./Servicios/traducciones";
 export class Lost extends Phaser.Scene {
   constructor() {
-
     super("Lost");
   }
 
-
   init(data) {
-
     score = data.score;
     this.pastscore = data.pastscore;
     this.nivel=data.nivel;
@@ -45,8 +42,6 @@ export class Lost extends Phaser.Scene {
       ` ${score}`, {fontFamily: "arial",fontSize: "22px",
       }).setOrigin(0.5);
    
-      console.log(this.pastscore)
-
     const boton1 = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY + 250, 'botonnuevo').setInteractive({cursor: "pointer"})
     boton1.on('pointerover', function(){boton1.setTexture('botonnuevo2')})
     boton1.on('pointerout', function(){boton1.setTexture('botonnuevo')})
@@ -66,6 +61,7 @@ export class Lost extends Phaser.Scene {
       shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
       resolution: 2
     }).setOrigin(0.5)
+
     this.add.text(this.cameras.main.centerX, 85, getPhrase('PERDISTE'), {
       fontFamily: 'Lilita One',
       fontSize: '38px',
@@ -84,7 +80,6 @@ export class Lost extends Phaser.Scene {
 			strokeThickness: 7
 		}).setOrigin(0.5)
 
-
     this.add.text(this.cameras.main.centerX, this.cameras.main.centerY + 250, getPhrase('OTRA VEZ'), {
       fontFamily: 'Lilita One',
       fontSize: '25px',
@@ -94,6 +89,5 @@ export class Lost extends Phaser.Scene {
       shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
       resolution: 2
     }).setOrigin(0.5)
-   
   }
 }

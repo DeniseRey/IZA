@@ -3,4 +3,4 @@ module.exports = {
     EN_US: 'en-US',
     PT_BR: 'pt-BR',
     DE_DE: 'de-DE',
-  };
+};

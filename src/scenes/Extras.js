@@ -1,4 +1,3 @@
-import Button from "../scenes/Botones/button.js";
 import Phaser from 'phaser'
 import WebFontFile from './WebFontFile'
 import { DE_DE, EN_US, ES_AR, PT_BR } from './Servicios/languajes'
@@ -6,7 +5,6 @@ import { getTranslations, getPhrase } from "./Servicios/traducciones";
 
 export class Extras extends Phaser.Scene {
   constructor() {
-
     super("Extras");
   }
 
@@ -18,7 +16,6 @@ export class Extras extends Phaser.Scene {
 
   create() {
     this.add.image(this.cameras.main.centerX, this.cameras.main.centerY, 'principal').setScale(0.83,1);
-
 
     const boton1 = this.add.sprite(this.cameras.main.centerX, this.cameras.main.centerY + 250, 'botonnuevo').setInteractive({cursor: "pointer"})
     boton1.on('pointerover', function(){boton1.setTexture('botonnuevo2')})
@@ -32,9 +29,8 @@ export class Extras extends Phaser.Scene {
         stroke: '#CC2B7B',
         strokeThickness: 10,
         resolution: 2
-      }).setOrigin(0.5)
+    }).setOrigin(0.5)
    
-
     this.add.text(this.cameras.main.centerX, this.cameras.main.centerY + 250, getPhrase('ATRÁS'), {
       fontFamily: 'Lilita One',
       fontSize: '28px',
@@ -44,4 +40,5 @@ export class Extras extends Phaser.Scene {
       shadow: { offsetX: 0, offsetY: 0, fill: false, blur: 6, stroke: false },
       resolution: 2
     }).setOrigin(0.5)
-  }}
+  }
+}

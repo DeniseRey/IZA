@@ -9,10 +9,5 @@ export default class Recolectable extends Phaser.GameObjects.Sprite
 		scene.physics.add.existing(this);
 		this.puntos=puntos;
 		this.scene=scene
-	
-
-        
 	}
-
-	
 }
